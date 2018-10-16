@@ -1,1 +1,0 @@
-../../../LBPhotoBrowser/test/LBPhotoBrowser/LBTapDetectingImageView.h

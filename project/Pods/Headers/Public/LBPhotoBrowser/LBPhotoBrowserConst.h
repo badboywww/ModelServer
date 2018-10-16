@@ -1,1 +1,0 @@
-../../../LBPhotoBrowser/test/LBPhotoBrowser/LBPhotoBrowserConst.h
