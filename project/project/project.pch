@@ -1,0 +1,38 @@
+//
+//  project.pch
+//  project
+//
+//  Created by Bad on 2018/9/4.
+//  Copyright © 2018 Bad. All rights reserved.
+//
+
+#ifndef project_pch
+#define project_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Person.h"
+#import <UIKit/UIKit.h>
+#import <AFNetworking/AFNetworking.h>
+#import <Masonry/Masonry.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
+#import <Reachability/Reachability.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <LBPhotoBrowser/LBPhotoBrowserManager.h>
+#import "Tools/HRRequestTools.h"
+#import "Tools/SPUncaughtExceptionHandler/SPUncaughtExceptionHandler.h"
+
+#pragma mark 自己的工具类
+#import "Tools/MyTools/UIView+NTES.h"
+#import "Tools/MyTools/NSString+Extension.h"
+#import "Tools/MyTools/UIImage+Watermark.h"
+
+
+#define Swidth [UIScreen mainScreen].bounds.size.width
+#define Sheight [UIScreen mainScreen].bounds.size.height
+
+
+#endif /* project_pch */
+

@@ -1,0 +1,12 @@
+target 'project' do
+pod 'AFNetworking'
+pod 'SVProgressHUD'
+pod 'MJRefresh'
+pod 'MBProgressHUD'
+pod 'Masonry'
+pod 'Reachability'
+pod 'CTAssetsPickerController'
+pod 'LBPhotoBrowser'
+
+end
+
