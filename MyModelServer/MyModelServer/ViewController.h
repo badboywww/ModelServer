@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "OneViewController.h"
+#import "viewGroup/DragandDropViewController.h"
+#import "Quartz2D/QuartzViewController.h"
+#import "Tools/photos/View/GetPhotoViewController.h"
+#import "WMT/MyOneViewController.h"
+#import "dataStorageViewController.h"
 @interface ViewController : UIViewController
 
 

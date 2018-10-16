@@ -13,6 +13,32 @@
 		5702EBC42175BED200104820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5702EBC32175BED200104820 /* Assets.xcassets */; };
 		5702EBC72175BED200104820 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5702EBC52175BED200104820 /* LaunchScreen.storyboard */; };
 		5702EBCA2175BED200104820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBC92175BED200104820 /* main.m */; };
+		5702EC0B2175C35700104820 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBD52175C35700104820 /* OneViewController.m */; };
+		5702EC0C2175C35700104820 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBD72175C35700104820 /* TwoViewController.m */; };
+		5702EC0D2175C35700104820 /* DragandDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBD92175C35700104820 /* DragandDropViewController.m */; };
+		5702EC0E2175C35700104820 /* RedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBDA2175C35700104820 /* RedView.m */; };
+		5702EC0F2175C35700104820 /* MyOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBDD2175C35700104820 /* MyOneViewController.m */; };
+		5702EC102175C35700104820 /* UIKitDrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBE02175C35700104820 /* UIKitDrawingViewController.m */; };
+		5702EC112175C35700104820 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBE12175C35700104820 /* DrawView.m */; };
+		5702EC122175C35700104820 /* QuartzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBE22175C35700104820 /* QuartzViewController.m */; };
+		5702EC132175C35700104820 /* OneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBE42175C35700104820 /* OneView.m */; };
+		5702EC142175C35700104820 /* TwoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBE82175C35700104820 /* TwoView.m */; };
+		5702EC152175C35700104820 /* MyImgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBEB2175C35700104820 /* MyImgeView.m */; };
+		5702EC162175C35700104820 /* pieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBEC2175C35700104820 /* pieView.m */; };
+		5702EC182175C35700104820 /* SPUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBF22175C35700104820 /* SPUncaughtExceptionHandler.m */; };
+		5702EC192175C35700104820 /* UIView+NTES.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBF52175C35700104820 /* UIView+NTES.m */; };
+		5702EC1A2175C35700104820 /* UIImage+Watermark.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBF72175C35700104820 /* UIImage+Watermark.m */; };
+		5702EC1B2175C35700104820 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBF92175C35700104820 /* NSString+Extension.m */; };
+		5702EC1C2175C35700104820 /* PhotoSingle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EBFF2175C35700104820 /* PhotoSingle.m */; };
+		5702EC1D2175C35700104820 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC002175C35700104820 /* PhotoViewController.m */; };
+		5702EC1E2175C35700104820 /* PhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC022175C35700104820 /* PhotoModel.m */; };
+		5702EC1F2175C35700104820 /* PhotoSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC052175C35700104820 /* PhotoSelectorView.m */; };
+		5702EC202175C35700104820 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC072175C35700104820 /* PhotoCollectionViewCell.m */; };
+		5702EC212175C35700104820 /* GetPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC092175C35700104820 /* GetPhotoViewController.m */; };
+		5702EC282175C38C00104820 /* dataStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC242175C38C00104820 /* dataStorageViewController.m */; };
+		5702EC292175C38D00104820 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC262175C38C00104820 /* Person.m */; };
+		5702EC2A2175C38D00104820 /* HRRequestTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC272175C38C00104820 /* HRRequestTools.m */; };
+		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +52,60 @@
 		5702EBC62175BED200104820 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5702EBC82175BED200104820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5702EBC92175BED200104820 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5702EBD22175C0B600104820 /* mymodelserverpch.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mymodelserverpch.pch; sourceTree = "<group>"; };
+		5702EBD42175C35700104820 /* DragandDropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragandDropViewController.h; sourceTree = "<group>"; };
+		5702EBD52175C35700104820 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		5702EBD62175C35700104820 /* RedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedView.h; sourceTree = "<group>"; };
+		5702EBD72175C35700104820 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		5702EBD82175C35700104820 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		5702EBD92175C35700104820 /* DragandDropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragandDropViewController.m; sourceTree = "<group>"; };
+		5702EBDA2175C35700104820 /* RedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedView.m; sourceTree = "<group>"; };
+		5702EBDB2175C35700104820 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		5702EBDD2175C35700104820 /* MyOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOneViewController.m; sourceTree = "<group>"; };
+		5702EBDE2175C35700104820 /* MyOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOneViewController.h; sourceTree = "<group>"; };
+		5702EBE02175C35700104820 /* UIKitDrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIKitDrawingViewController.m; sourceTree = "<group>"; };
+		5702EBE12175C35700104820 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		5702EBE22175C35700104820 /* QuartzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuartzViewController.m; sourceTree = "<group>"; };
+		5702EBE32175C35700104820 /* TwoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoView.h; sourceTree = "<group>"; };
+		5702EBE42175C35700104820 /* OneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneView.m; sourceTree = "<group>"; };
+		5702EBE52175C35700104820 /* MyImgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImgeView.h; sourceTree = "<group>"; };
+		5702EBE62175C35700104820 /* pieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pieView.h; sourceTree = "<group>"; };
+		5702EBE72175C35700104820 /* UIKitDrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIKitDrawingViewController.h; sourceTree = "<group>"; };
+		5702EBE82175C35700104820 /* TwoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoView.m; sourceTree = "<group>"; };
+		5702EBE92175C35700104820 /* QuartzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuartzViewController.h; sourceTree = "<group>"; };
+		5702EBEA2175C35700104820 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		5702EBEB2175C35700104820 /* MyImgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyImgeView.m; sourceTree = "<group>"; };
+		5702EBEC2175C35700104820 /* pieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pieView.m; sourceTree = "<group>"; };
+		5702EBED2175C35700104820 /* OneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneView.h; sourceTree = "<group>"; };
+		5702EBF12175C35700104820 /* SPUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		5702EBF22175C35700104820 /* SPUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		5702EBF32175C35700104820 /* HRRequestTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRRequestTools.h; sourceTree = "<group>"; };
+		5702EBF52175C35700104820 /* UIView+NTES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NTES.m"; sourceTree = "<group>"; };
+		5702EBF62175C35700104820 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		5702EBF72175C35700104820 /* UIImage+Watermark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Watermark.m"; sourceTree = "<group>"; };
+		5702EBF82175C35700104820 /* UIView+NTES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NTES.h"; sourceTree = "<group>"; };
+		5702EBF92175C35700104820 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		5702EBFA2175C35700104820 /* UIImage+Watermark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Watermark.h"; sourceTree = "<group>"; };
+		5702EBFC2175C35700104820 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		5702EBFE2175C35700104820 /* PhotoSingle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSingle.h; sourceTree = "<group>"; };
+		5702EBFF2175C35700104820 /* PhotoSingle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSingle.m; sourceTree = "<group>"; };
+		5702EC002175C35700104820 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		5702EC022175C35700104820 /* PhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoModel.m; sourceTree = "<group>"; };
+		5702EC032175C35700104820 /* PhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoModel.h; sourceTree = "<group>"; };
+		5702EC052175C35700104820 /* PhotoSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoSelectorView.m; sourceTree = "<group>"; };
+		5702EC062175C35700104820 /* GetPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPhotoViewController.h; sourceTree = "<group>"; };
+		5702EC072175C35700104820 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		5702EC082175C35700104820 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		5702EC092175C35700104820 /* GetPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetPhotoViewController.m; sourceTree = "<group>"; };
+		5702EC0A2175C35700104820 /* PhotoSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoSelectorView.h; sourceTree = "<group>"; };
+		5702EC232175C38C00104820 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		5702EC242175C38C00104820 /* dataStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dataStorageViewController.m; sourceTree = "<group>"; };
+		5702EC252175C38C00104820 /* dataStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataStorageViewController.h; sourceTree = "<group>"; };
+		5702EC262175C38C00104820 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		5702EC272175C38C00104820 /* HRRequestTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRRequestTools.m; sourceTree = "<group>"; };
+		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
+		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
+		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +113,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D31BC4A7C4208FA1EA63A03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */,
+				E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5702EBAE2175BED100104820 = {
 			isa = PBXGroup;
 			children = (
 				5702EBB92175BED100104820 /* MyModelServer */,
 				5702EBB82175BED100104820 /* Products */,
+				1D31BC4A7C4208FA1EA63A03 /* Pods */,
+				D3315D2708C5C8DD4E07E360 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +150,12 @@
 		5702EBB92175BED100104820 /* MyModelServer */ = {
 			isa = PBXGroup;
 			children = (
+				5702EC222175C38C00104820 /* dataGroup */,
+				5702EBDF2175C35700104820 /* Quartz2D */,
+				5702EBEE2175C35700104820 /* Tools */,
+				5702EBD32175C35700104820 /* viewGroup */,
+				5702EBDC2175C35700104820 /* WMT */,
+				5702EBD02175BF7E00104820 /* Other */,
 				5702EBBA2175BED100104820 /* AppDelegate.h */,
 				5702EBBB2175BED100104820 /* AppDelegate.m */,
 				5702EBBD2175BED100104820 /* ViewController.h */,
@@ -71,6 +169,155 @@
 			path = MyModelServer;
 			sourceTree = "<group>";
 		};
+		5702EBD02175BF7E00104820 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				5702EBD22175C0B600104820 /* mymodelserverpch.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		5702EBD32175C35700104820 /* viewGroup */ = {
+			isa = PBXGroup;
+			children = (
+				5702EBD42175C35700104820 /* DragandDropViewController.h */,
+				5702EBD52175C35700104820 /* OneViewController.m */,
+				5702EBD62175C35700104820 /* RedView.h */,
+				5702EBD72175C35700104820 /* TwoViewController.m */,
+				5702EBD82175C35700104820 /* OneViewController.h */,
+				5702EBD92175C35700104820 /* DragandDropViewController.m */,
+				5702EBDA2175C35700104820 /* RedView.m */,
+				5702EBDB2175C35700104820 /* TwoViewController.h */,
+			);
+			path = viewGroup;
+			sourceTree = "<group>";
+		};
+		5702EBDC2175C35700104820 /* WMT */ = {
+			isa = PBXGroup;
+			children = (
+				5702EBDE2175C35700104820 /* MyOneViewController.h */,
+				5702EBDD2175C35700104820 /* MyOneViewController.m */,
+			);
+			path = WMT;
+			sourceTree = "<group>";
+		};
+		5702EBDF2175C35700104820 /* Quartz2D */ = {
+			isa = PBXGroup;
+			children = (
+				5702EBE02175C35700104820 /* UIKitDrawingViewController.m */,
+				5702EBE12175C35700104820 /* DrawView.m */,
+				5702EBE22175C35700104820 /* QuartzViewController.m */,
+				5702EBE32175C35700104820 /* TwoView.h */,
+				5702EBE42175C35700104820 /* OneView.m */,
+				5702EBE52175C35700104820 /* MyImgeView.h */,
+				5702EBE62175C35700104820 /* pieView.h */,
+				5702EBE72175C35700104820 /* UIKitDrawingViewController.h */,
+				5702EBE82175C35700104820 /* TwoView.m */,
+				5702EBE92175C35700104820 /* QuartzViewController.h */,
+				5702EBEA2175C35700104820 /* DrawView.h */,
+				5702EBEB2175C35700104820 /* MyImgeView.m */,
+				5702EBEC2175C35700104820 /* pieView.m */,
+				5702EBED2175C35700104820 /* OneView.h */,
+			);
+			path = Quartz2D;
+			sourceTree = "<group>";
+		};
+		5702EBEE2175C35700104820 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				5702EBF32175C35700104820 /* HRRequestTools.h */,
+				5702EBF02175C35700104820 /* SPUncaughtExceptionHandler */,
+				5702EBF42175C35700104820 /* MyTools */,
+				5702EBFB2175C35700104820 /* photos */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		5702EBF02175C35700104820 /* SPUncaughtExceptionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				5702EBF12175C35700104820 /* SPUncaughtExceptionHandler.h */,
+				5702EBF22175C35700104820 /* SPUncaughtExceptionHandler.m */,
+			);
+			path = SPUncaughtExceptionHandler;
+			sourceTree = "<group>";
+		};
+		5702EBF42175C35700104820 /* MyTools */ = {
+			isa = PBXGroup;
+			children = (
+				5702EBF52175C35700104820 /* UIView+NTES.m */,
+				5702EBF62175C35700104820 /* NSString+Extension.h */,
+				5702EBF72175C35700104820 /* UIImage+Watermark.m */,
+				5702EBF82175C35700104820 /* UIView+NTES.h */,
+				5702EBF92175C35700104820 /* NSString+Extension.m */,
+				5702EBFA2175C35700104820 /* UIImage+Watermark.h */,
+			);
+			path = MyTools;
+			sourceTree = "<group>";
+		};
+		5702EBFB2175C35700104820 /* photos */ = {
+			isa = PBXGroup;
+			children = (
+				5702EBFC2175C35700104820 /* PhotoViewController.h */,
+				5702EBFD2175C35700104820 /* Single */,
+				5702EC002175C35700104820 /* PhotoViewController.m */,
+				5702EC012175C35700104820 /* Model */,
+				5702EC042175C35700104820 /* View */,
+			);
+			path = photos;
+			sourceTree = "<group>";
+		};
+		5702EBFD2175C35700104820 /* Single */ = {
+			isa = PBXGroup;
+			children = (
+				5702EBFE2175C35700104820 /* PhotoSingle.h */,
+				5702EBFF2175C35700104820 /* PhotoSingle.m */,
+			);
+			path = Single;
+			sourceTree = "<group>";
+		};
+		5702EC012175C35700104820 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5702EC022175C35700104820 /* PhotoModel.m */,
+				5702EC032175C35700104820 /* PhotoModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5702EC042175C35700104820 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5702EC052175C35700104820 /* PhotoSelectorView.m */,
+				5702EC062175C35700104820 /* GetPhotoViewController.h */,
+				5702EC072175C35700104820 /* PhotoCollectionViewCell.m */,
+				5702EC082175C35700104820 /* PhotoCollectionViewCell.h */,
+				5702EC092175C35700104820 /* GetPhotoViewController.m */,
+				5702EC0A2175C35700104820 /* PhotoSelectorView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5702EC222175C38C00104820 /* dataGroup */ = {
+			isa = PBXGroup;
+			children = (
+				5702EC232175C38C00104820 /* Person.h */,
+				5702EC242175C38C00104820 /* dataStorageViewController.m */,
+				5702EC252175C38C00104820 /* dataStorageViewController.h */,
+				5702EC262175C38C00104820 /* Person.m */,
+				5702EC272175C38C00104820 /* HRRequestTools.m */,
+			);
+			path = dataGroup;
+			sourceTree = "<group>";
+		};
+		D3315D2708C5C8DD4E07E360 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +325,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5702EBCD2175BED200104820 /* Build configuration list for PBXNativeTarget "MyModelServer" */;
 			buildPhases = (
+				37245931DF073E16A7007C55 /* [CP] Check Pods Manifest.lock */,
 				5702EBB32175BED100104820 /* Sources */,
 				5702EBB42175BED100104820 /* Frameworks */,
 				5702EBB52175BED100104820 /* Resources */,
+				3545CB740A487D0C65C9010B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,14 +385,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3545CB740A487D0C65C9010B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CTAssetsPickerController/CTAssetsPickerController.bundle",
+				"${PODS_ROOT}/LBPhotoBrowser/test/LBPhotoBrowser/LBPhotoBrowser.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CTAssetsPickerController.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LBPhotoBrowser.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37245931DF073E16A7007C55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyModelServer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5702EBB32175BED100104820 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5702EC1C2175C35700104820 /* PhotoSingle.m in Sources */,
+				5702EC152175C35700104820 /* MyImgeView.m in Sources */,
 				5702EBBF2175BED100104820 /* ViewController.m in Sources */,
+				5702EC162175C35700104820 /* pieView.m in Sources */,
+				5702EC282175C38C00104820 /* dataStorageViewController.m in Sources */,
+				5702EC0D2175C35700104820 /* DragandDropViewController.m in Sources */,
+				5702EC292175C38D00104820 /* Person.m in Sources */,
 				5702EBCA2175BED200104820 /* main.m in Sources */,
+				5702EC1D2175C35700104820 /* PhotoViewController.m in Sources */,
 				5702EBBC2175BED100104820 /* AppDelegate.m in Sources */,
+				5702EC1B2175C35700104820 /* NSString+Extension.m in Sources */,
+				5702EC182175C35700104820 /* SPUncaughtExceptionHandler.m in Sources */,
+				5702EC112175C35700104820 /* DrawView.m in Sources */,
+				5702EC132175C35700104820 /* OneView.m in Sources */,
+				5702EC102175C35700104820 /* UIKitDrawingViewController.m in Sources */,
+				5702EC2A2175C38D00104820 /* HRRequestTools.m in Sources */,
+				5702EC202175C35700104820 /* PhotoCollectionViewCell.m in Sources */,
+				5702EC212175C35700104820 /* GetPhotoViewController.m in Sources */,
+				5702EC0C2175C35700104820 /* TwoViewController.m in Sources */,
+				5702EC0B2175C35700104820 /* OneViewController.m in Sources */,
+				5702EC142175C35700104820 /* TwoView.m in Sources */,
+				5702EC0E2175C35700104820 /* RedView.m in Sources */,
+				5702EC1F2175C35700104820 /* PhotoSelectorView.m in Sources */,
+				5702EC1A2175C35700104820 /* UIImage+Watermark.m in Sources */,
+				5702EC1E2175C35700104820 /* PhotoModel.m in Sources */,
+				5702EC0F2175C35700104820 /* MyOneViewController.m in Sources */,
+				5702EC122175C35700104820 /* QuartzViewController.m in Sources */,
+				5702EC192175C35700104820 /* UIView+NTES.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,10 +602,14 @@
 		};
 		5702EBCE2175BED200104820 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA44B289S8;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MyModelServer/Other/mymodelserverpch.pch;
 				INFOPLIST_FILE = MyModelServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,10 +623,14 @@
 		};
 		5702EBCF2175BED200104820 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BA44B289S8;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = MyModelServer/Other/mymodelserverpch.pch;
 				INFOPLIST_FILE = MyModelServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

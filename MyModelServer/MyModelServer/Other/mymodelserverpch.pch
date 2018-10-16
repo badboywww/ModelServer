@@ -1,0 +1,45 @@
+//
+//  mymodelserverpch.pch
+//  MyModelServer
+//
+//  Created by Bad on 2018/10/16.
+//  Copyright © 2018 Bad. All rights reserved.
+//
+
+#ifndef mymodelserverpch_pch
+#define mymodelserverpch_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Person.h"
+#import <UIKit/UIKit.h>
+#import <AFNetworking/AFNetworking.h>
+#import <Masonry/Masonry.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
+#import <Reachability/Reachability.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "HRRequestTools.h"
+#import "SPUncaughtExceptionHandler.h"
+#import <LBPhotoBrowserManager.h>
+#import <LBPhotoBrowserView.h>
+#import <LBPhotoBrowserConst.h>
+
+#pragma mark 自己的工具类
+#import "UIView+NTES.h"
+#import "NSString+Extension.h"
+#import "UIImage+Watermark.h"
+
+
+#define Swidth [UIScreen mainScreen].bounds.size.width
+#define Sheight [UIScreen mainScreen].bounds.size.height
+
+
+
+
+
+
+
+
+#endif /* mymodelserverpch_pch */
