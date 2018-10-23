@@ -10,8 +10,10 @@
 
 @implementation UIImage (Watermark)
 
+
+#pragma mark 加水印
 // CGSize size: 开启一个多大图片的上下文   opaque:不透明度 一般为 NO    CGFloat scale : 要不要缩放 一般为0
--(UIImage *)setImageAddWatermark:(UIImage *)image ImageSize:(CGSize)size Opaque:(BOOL)opaque Scale:(CGFloat)scale Watermarkstr:(NSString *)str WatermarkstrColor:(UIColor *)strColor StrFont:(float)font{
++(UIImage *)setImageAddWatermark:(UIImage *)image ImageSize:(CGSize)size Opaque:(BOOL)opaque Scale:(CGFloat)scale Watermarkstr:(NSString *)str WatermarkstrColor:(UIColor *)strColor StrFont:(float)font{
     
     //开始图片上下文
     UIGraphicsBeginImageContextWithOptions(size, opaque,scale);
@@ -37,6 +39,59 @@
     
     //手动关闭上下文
     UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+#pragma mark 裁剪头像
++(UIImage *)setImageAddCutpicture:(UIImage *)image ImageSize:(CGSize)size Opaque:(BOOL)opaque Scale:(CGFloat)scale NewImageWidth:(CGFloat)newimagewidth{
+    
+    
+    UIGraphicsBeginImageContextWithOptions(size, opaque,scale);
+    
+    UIBezierPath *path=[UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, size.width, size.width)];
+    
+    //把路径设置成裁剪区域
+    [path addClip];
+    
+    [image drawAtPoint:CGPointZero];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    newImage = [newImage scaleToWidth:newimagewidth];
+    UIGraphicsEndImageContext();
+    
+    
+    
+    
+    return newImage;
+    
+}
+
+
++(UIImage *)imageWithBorderWidth:(CGFloat)borderW BorderColor:(UIColor *)color image:(UIImage *)image NewImageWidth:(CGFloat)newimagewidth {
+    
+    CGSize size = CGSizeMake(image.size.width + 2 * borderW, image.size.height + 2 * borderW);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    
+    //大圆
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, size.width, size.height)];
+    [color set];
+    [path fill];
+    
+    //小圆
+    path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(borderW, borderW, image.size.width, image.size.height)];
+    
+    [path addClip];
+    
+    [image drawInRect:CGRectMake(borderW, borderW, image.size.width, image.size.height)];
+    
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    newImage = [newImage scaleToWidth:newimagewidth];
+    UIGraphicsEndImageContext();
+    
+    
+    
     
     return newImage;
 }

@@ -13,8 +13,11 @@
 #import "Tools/photos/View/GetPhotoViewController.h"
 #import "WMT/MyOneViewController.h"
 #import "dataStorageViewController.h"
-@interface ViewController : UIViewController
+#import "CALayer/CALayerViewController.h"
+@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
+@property(nonatomic , strong) UITableView *tableVc;
+@property(nonatomic , strong) NSMutableArray *dataArray;
 
 @end
 

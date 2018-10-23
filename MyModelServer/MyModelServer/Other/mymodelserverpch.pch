@@ -30,7 +30,8 @@
 #import "UIView+NTES.h"
 #import "NSString+Extension.h"
 #import "UIImage+Watermark.h"
-
+#import "UIImage+HRExtension.h"
+#import "UIView+HRFrame.h"
 
 #define Swidth [UIScreen mainScreen].bounds.size.width
 #define Sheight [UIScreen mainScreen].bounds.size.height

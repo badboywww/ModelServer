@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#define CELL @"cell"
+
 @interface ViewController ()
 
 @end
@@ -33,118 +35,98 @@
 
 -(void)setUI{
     
-#pragma mark 数据持久化存储
-    UIButton *OneBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    OneBtn.frame=CGRectMake(0, self.view.frame.size.width/2-22,self.view.frame.size.width, 44);
-    [OneBtn setTitle:@"数据存储" forState:UIControlStateNormal];
-    [OneBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    OneBtn.backgroundColor=[UIColor groupTableViewBackgroundColor];
-    [OneBtn addTarget:self action:@selector(OneAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:OneBtn];
     
-#pragma mark View的故事
-    UIButton *TwoBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    TwoBtn.frame=CGRectMake(0, CGRectGetMaxY(OneBtn.frame)+5,self.view.frame.size.width, 44);
-    [TwoBtn setTitle:@"View的故事" forState:UIControlStateNormal];
-    [TwoBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    TwoBtn.backgroundColor=[UIColor groupTableViewBackgroundColor];
-    [TwoBtn addTarget:self action:@selector(TwoAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:TwoBtn];
+    _tableVc = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, Swidth, Sheight-64)];
+    _tableVc.delegate = self;
+    _tableVc.dataSource = self;
+    _tableVc.showsVerticalScrollIndicator=NO;
+    _tableVc.contentInset = UIEdgeInsetsMake(0, 0, 105, 0);
+    _tableVc.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
+    [self.view addSubview:_tableVc];
     
-#pragma  View 拖拽
-    UIButton *ThreeBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    ThreeBtn.frame=CGRectMake(0, CGRectGetMaxY(TwoBtn.frame)+5,self.view.frame.size.width, 44);
-    [ThreeBtn setTitle:@"View的拖拽" forState:UIControlStateNormal];
-    [ThreeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    ThreeBtn.backgroundColor=[UIColor groupTableViewBackgroundColor];
-    [ThreeBtn addTarget:self action:@selector(ThreeAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:ThreeBtn];
+    _dataArray=[NSMutableArray new];
     
-#pragma  View 拖拽
-    UIButton *FourBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    FourBtn.frame=CGRectMake(0, CGRectGetMaxY(ThreeBtn.frame)+5,self.view.frame.size.width, 44);
-    [FourBtn setTitle:@"上传文件" forState:UIControlStateNormal];
-    [FourBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    FourBtn.backgroundColor=[UIColor groupTableViewBackgroundColor];
-    [FourBtn addTarget:self action:@selector(FourAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:FourBtn];
+    NSArray *arr=[NSArray arrayWithObjects: @"数据存储",
+                                            @"View的故事",
+                                            @"View的拖拽",
+                                            @"上传文件",
+                                            @"Quartz2D",
+                                            @"选择图片",
+                                            @"WMT",
+                                            @"CALayer",
+                                            nil];
+    [_dataArray addObjectsFromArray:arr];
     
-#pragma  View Quartz2D
-    UIButton *FiveBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    FiveBtn.frame=CGRectMake(0, CGRectGetMaxY(FourBtn.frame)+5,self.view.frame.size.width, 44);
-    [FiveBtn setTitle:@"Quartz2D" forState:UIControlStateNormal];
-    [FiveBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    FiveBtn.backgroundColor=[UIColor groupTableViewBackgroundColor];
-    [FiveBtn addTarget:self action:@selector(FiveAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:FiveBtn];
-    
-    UIButton *SixBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    SixBtn.frame=CGRectMake(0, CGRectGetMaxY(FiveBtn.frame)+5,self.view.frame.size.width, 44);
-    [SixBtn setTitle:@"选择图片" forState:UIControlStateNormal];
-    [SixBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    SixBtn.backgroundColor=[UIColor groupTableViewBackgroundColor];
-    [SixBtn addTarget:self action:@selector(SixAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:SixBtn];
-    
-#pragma make WMT
-    UIButton *SevenBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    SevenBtn.frame=CGRectMake(0, CGRectGetMaxY(SixBtn.frame)+5,self.view.frame.size.width, 44);
-    [SevenBtn setTitle:@"WMT" forState:UIControlStateNormal];
-    [SevenBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    SevenBtn.backgroundColor=[UIColor groupTableViewBackgroundColor];
-    [SevenBtn addTarget:self action:@selector(SevenAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:SevenBtn];
-    
-    
-    
-    
+
+ 
 }
 
--(void)OneAction{
-    
-    dataStorageViewController *vc=[dataStorageViewController new];
-    
-    [self.navigationController pushViewController:vc animated:YES];
+//行数：
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _dataArray.count;
 }
 
--(void)TwoAction{
-    OneViewController *vc=[[OneViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+
+//返回行高：
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
 }
 
--(void)ThreeAction{
-    DragandDropViewController *vc=[DragandDropViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+
+
+//加载的Cell
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+   
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL];
+    
+    if (cell == nil) {
+        //副标题样式
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CELL];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text=_dataArray[indexPath.row];
+    
+    
+    return  cell;
 }
 
--(void)FourAction{
-    NSString *url=@"/Users/badwwy/Documents/";
+
+
+//点击Cell
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSString *filepath=@"/Users/badwwy/Library/Developer/CoreSimulator/Devices/824F6640-32FA-4389-8C0B-562CF532B9DA/data/Containers/Data/Application/81CAD79E-EF25-4D10-9C7E-2A773A1E2D3B/Library/Caches/";
-    
-    [HRRequestTools RequestFileUrl:url LocalFiles:filepath Progress:^(NSProgress *progress) {
+    if (indexPath.row == 0) {
+        //数据存储
+        dataStorageViewController *vc=[dataStorageViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 1){
+        //View的故事
+        OneViewController *vc=[[OneViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 2){
+        //View的拖拽
+        DragandDropViewController *vc=[DragandDropViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 3){
         
-    } Success:^(NSDictionary *result) {
-        NSLog(@"result==%@",result);
-    } failed:^(NSString *result) {
-        NSLog(@"result==%@",result);
-    }];
-}
-
--(void)FiveAction{
-    QuartzViewController *vc=[QuartzViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
--(void)SixAction{
-    GetPhotoViewController *vc=[GetPhotoViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 4){
+        //Quartz 2D
+        QuartzViewController *vc=[QuartzViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 5){
+        //选择图片
+        GetPhotoViewController *vc=[GetPhotoViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 6){
+        //WMT
+        MyOneViewController *vc=[MyOneViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 7){
+        //CALayer
+        CALayerViewController *vc=[CALayerViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     
-}
-
--(void)SevenAction{
-    MyOneViewController *vc=[MyOneViewController new];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

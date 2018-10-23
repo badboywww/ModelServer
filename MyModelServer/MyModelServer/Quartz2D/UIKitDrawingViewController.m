@@ -55,7 +55,46 @@
 //    _drawVc.backgroundColor=[UIColor lightGrayColor];
 //    [self.view addSubview:_drawVc];
     
-    [self ImgAddWatermark];
+//    [self ImgAddWatermark];
+    
+#pragma mark 剪切图片
+//    [self Cutpicture];
+#pragma mark 带边框的图片
+    [self Cutpicturewithborder];
+}
+
+#pragma mark 带边框的裁剪
+-(void)Cutpicturewithborder{
+    
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    //生成图片
+    UIImage *img=[UIImage imageNamed:@"smm"];
+    
+    UIImage *newImage = [UIImage imageWithBorderWidth:10 BorderColor:[UIColor blueColor] image:img NewImageWidth:100];
+    
+    
+    UIImageView *imgVc=[[UIImageView alloc]initWithFrame:CGRectMake((Swidth-newImage.size.width)/2, 64, newImage.size.width, newImage.size.height)];
+    
+    imgVc.image=newImage;
+    [self.view addSubview:imgVc];
+    
+    
+}
+
+
+#pragma mark 图片裁剪
+- (void)Cutpicture{
+    
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    //生成图片
+    UIImage *img=[UIImage imageNamed:@"smm"];
+    
+    UIImage *newImage=[UIImage  setImageAddCutpicture:img ImageSize:img.size Opaque:NO Scale:0.0 NewImageWidth:200];
+    UIImageView *imgVc=[[UIImageView alloc]initWithFrame:CGRectMake((Swidth-newImage.size.width)/2, 64, newImage.size.width, newImage.size.height)];
+  
+    imgVc.image=newImage;
+    [self.view addSubview:imgVc];
+    
     
 }
 
@@ -66,9 +105,8 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     //生成图片
     UIImage *img=[UIImage imageNamed:@"smm"];
-    UIImage *newImage=[[UIImage alloc]init];
-   // CGSizeMake(CGFloat width, CGFloat height)
-    newImage = [newImage setImageAddWatermark:img ImageSize:img.size Opaque:NO Scale:0.0 Watermarkstr:@"@隔壁老王" WatermarkstrColor:[UIColor whiteColor] StrFont:12];
+    // CGSizeMake(CGFloat width, CGFloat height)
+    UIImage *newImage=[UIImage setImageAddWatermark:img ImageSize:img.size Opaque:NO Scale:0.0 Watermarkstr:@"@隔壁老王" WatermarkstrColor:[UIColor whiteColor] StrFont:12];
     
     //显示图片
     UIImageView *myimageVc=[[UIImageView alloc]initWithFrame:CGRectMake((Swidth-380)/2, (Sheight-566)/2, newImage.size.width, newImage.size.height)];
