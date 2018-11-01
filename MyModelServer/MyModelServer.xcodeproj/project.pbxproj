@@ -42,6 +42,7 @@
 		5702EC302178B41C00104820 /* UIImage+HRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC2E2178B41C00104820 /* UIImage+HRExtension.m */; };
 		5702EC34217DF14200104820 /* CALayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC33217DF14200104820 /* CALayerViewController.m */; };
 		5702EC37217DF26400104820 /* myCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC36217DF26400104820 /* myCALayer.m */; };
+		578F1E2A21816A60002D9BC1 /* UIColor+MyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */; };
 		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,8 @@
 		5702EC33217DF14200104820 /* CALayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CALayerViewController.m; sourceTree = "<group>"; };
 		5702EC35217DF26400104820 /* myCALayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myCALayer.h; sourceTree = "<group>"; };
 		5702EC36217DF26400104820 /* myCALayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myCALayer.m; sourceTree = "<group>"; };
+		578F1E2821816A60002D9BC1 /* UIColor+MyColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColor.h"; sourceTree = "<group>"; };
+		578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColor.m"; sourceTree = "<group>"; };
 		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
 		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
 		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +272,8 @@
 				5702EBF92175C35700104820 /* NSString+Extension.m */,
 				5702EBFA2175C35700104820 /* UIImage+Watermark.h */,
 				5702EBF72175C35700104820 /* UIImage+Watermark.m */,
+				578F1E2821816A60002D9BC1 /* UIColor+MyColor.h */,
+				578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */,
 			);
 			path = MyTools;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				5702EC1A2175C35700104820 /* UIImage+Watermark.m in Sources */,
 				5702EC1E2175C35700104820 /* PhotoModel.m in Sources */,
 				5702EC0F2175C35700104820 /* MyOneViewController.m in Sources */,
+				578F1E2A21816A60002D9BC1 /* UIColor+MyColor.m in Sources */,
 				5702EC122175C35700104820 /* QuartzViewController.m in Sources */,
 				5702EC192175C35700104820 /* UIView+NTES.m in Sources */,
 			);

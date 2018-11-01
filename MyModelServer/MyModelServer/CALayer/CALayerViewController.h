@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic , strong)myCALayer *myCaLayerVc;
 
+@property (nonatomic , strong)UIImageView *myImageVc;
+
 @end
 
 NS_ASSUME_NONNULL_END

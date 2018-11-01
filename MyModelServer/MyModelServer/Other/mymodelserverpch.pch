@@ -32,10 +32,11 @@
 #import "UIImage+Watermark.h"
 #import "UIImage+HRExtension.h"
 #import "UIView+HRFrame.h"
+#import "UIColor+MyColor.h"
 
 #define Swidth [UIScreen mainScreen].bounds.size.width
 #define Sheight [UIScreen mainScreen].bounds.size.height
-
+#define UIColorFromHex(s)  [UIColor colorWithRed:(((s & 0xFF0000) >> 16))/255.0 green:(((s &0xFF00) >>8))/255.0 blue:((s &0xFF))/255.0 alpha:1.0]
 
 
 

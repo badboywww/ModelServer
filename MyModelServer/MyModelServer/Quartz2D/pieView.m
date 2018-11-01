@@ -59,24 +59,12 @@
         NSLog(@"startA:%f--endA:%f--angle:%f",startA,endA,angle);
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
         [path addLineToPoint:center];
-        [[self randomColor]set];
+        [[UIColor randomColor]set];
         [path fill];
     }
  
 }
 
-//随机颜色
--(UIColor *)randomColor{
-    
-    CGFloat r = arc4random_uniform(256)/255.0;
-    CGFloat g = arc4random_uniform(256)/255.0;
-    CGFloat b = arc4random_uniform(256)/255.0;
-    
-    //0~255
- return  [UIColor colorWithRed:r green:g blue:b alpha:1];
-    
-    
-}
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self setNeedsDisplay];

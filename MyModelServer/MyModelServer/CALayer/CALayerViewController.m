@@ -73,7 +73,38 @@
     
     [self.view.layer addSublayer:layer];
     
-    layer.contents = (id)[UIImage imageNamed:@"smm"].CGImage;
+    self.view.backgroundColor=[UIColor groupTableViewBackgroundColor];
+    
+    
+    _myImageVc=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"smm"]];
+    _myImageVc.frame=CGRectMake(100, 180, 100, 100);
+    
+    
+    [self.view addSubview:_myImageVc];
+    
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    //3D 效果
+    [UIView animateWithDuration:1 animations:^{
+//        //旋转
+//        self.myImageVc.layer.transform = CATransform3DMakeRotation(M_PI, 1, 1, 0);
+//        //平移
+//        self.myImageVc.layer.transform = CATransform3DMakeTranslation(100, 50, 0);
+//        //缩放
+//        self.myImageVc.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0);
+        
+        //kvc
+        //结构体转成对象
+        //做一些快速的缩放，平移，旋转
+        NSValue *value = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI, 1, 1, 0)];
+        [self.myImageVc.layer setValue:@(M_PI) forKeyPath:@"transform.rotation"];
+        
+    }];
+    
+    
+    
     
 }
 
