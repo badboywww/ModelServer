@@ -33,6 +33,8 @@
 #import "UIImage+HRExtension.h"
 #import "UIView+HRFrame.h"
 #import "UIColor+MyColor.h"
+#import "UIView+CALayer.h"
+#import "UIView+NTES.h"
 
 #define Swidth [UIScreen mainScreen].bounds.size.width
 #define Sheight [UIScreen mainScreen].bounds.size.height

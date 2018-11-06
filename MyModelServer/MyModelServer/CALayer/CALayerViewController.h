@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "myCALayer.h"
+#import "WheelView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CALayerViewController : UIViewController
@@ -15,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , strong)myCALayer *myCaLayerVc;
 
 @property (nonatomic , strong)UIImageView *myImageVc;
+
+@property (nonatomic , strong)UIView *myRedVc;
+
+@property (nonatomic , weak)WheelView *wheels;
 
 @end
 
