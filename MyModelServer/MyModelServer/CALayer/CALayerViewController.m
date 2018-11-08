@@ -14,7 +14,7 @@
 {
     NSMutableArray *ImageArray;
 }
-
+@property(nonatomic , strong)DrawVc *drVc;
 @end
 
 @implementation CALayerViewController
@@ -78,9 +78,186 @@
 //    [self Animationgroup];
     
     //幸运大转盘
-    [self setluck];
+//    [self setluck];
+    //图片折叠
+//    [self Picturefolding];
+    
+    //音乐震动条/倒影
+    [self Musicalvibration];
     
 }
+
+
+
+-(void)Musicalvibration{
+    
+    
+#pragma mark 音乐震动条
+//    MusicalvibrationVc *vc = [[MusicalvibrationVc alloc]initWithFrame:CGRectMake((Swidth - 300)/2, 100, 300, 300)];
+//    [self.view addSubview:vc];
+
+#pragma mark    倒影
+//    xib
+//    UIView *backVc = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 0, 0)];
+//    ReflectionVc *vc = [[ReflectionVc alloc]init];
+//    [backVc addSubview:vc];
+//    [self.view addSubview:backVc];
+    
+//    code
+//    ReflectionCodeVc *refCodeVc = [[ReflectionCodeVc alloc]initWithFrame:CGRectMake(10, 100, 80, 80)];
+//    UIImage *image = [UIImage imageNamed:@"daoying"];
+//
+//    image = [image scaleToWidth:180];
+//    [refCodeVc setAddImgae:image];
+//    [self.view addSubview:refCodeVc];
+    
+#pragma mark 粒子效果
+    UIButton *oneBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [oneBtn setTitle:@"开始" forState:UIControlStateNormal];
+    oneBtn.frame = CGRectMake(50, 75, 50, 30);
+    [oneBtn addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:oneBtn];
+    
+    UIButton *twoBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [twoBtn setTitle:@"重绘" forState:UIControlStateNormal];
+    twoBtn.frame = CGRectMake(Swidth - 100, 75, 50, 30);
+    [twoBtn addTarget:self action:@selector(reDraw:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:twoBtn];
+    
+    _drVc = [[DrawVc alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY(oneBtn.frame), Swidth,Sheight-CGRectGetMaxY(oneBtn.frame))];
+    _drVc.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:_drVc];
+ 
+}
+-(void)start:(UIButton *)sender{
+    
+    [self.drVc start];
+    
+}
+
+-(void)reDraw:(UIButton *)sender{
+     [self.drVc reDraw];
+}
+
+//图片折叠
+-(void)Picturefolding{
+
+    UIImage *zhedieImg=[UIImage imageNamed:@"zhedie"];
+    
+
+//
+    // 下部分
+    _BottomImageVc = [[UIImageView alloc]initWithImage:zhedieImg];
+    _BottomImageVc.frame = CGRectMake((Swidth-180)/2, 200, 180, 100);
+
+    //下部分图片显示下半部分
+    self.BottomImageVc.layer.contentsRect = CGRectMake(0, 0.5, 1, 0.5);
+    self.BottomImageVc.layer.anchorPoint = CGPointMake(0.5, 0);
+
+    [self.view addSubview:_BottomImageVc];
+
+    // 上部分
+    _TopImageVc = [[UIImageView alloc]initWithImage:zhedieImg];
+    _TopImageVc.frame = CGRectMake((Swidth-180)/2, 200, 180, 100);
+
+    //上部分图片显示上半部分
+    self.TopImageVc.layer.contentsRect = CGRectMake(0, 0, 1, 0.5);
+    self.TopImageVc.layer.anchorPoint = CGPointMake(0.5, 1);
+
+
+    [self.view addSubview:_TopImageVc];
+
+    //空白的View
+    _backVc = [[UIView alloc]initWithFrame:CGRectMake((Swidth-180)/2, 160, 180, 200)];
+
+    //添加手势
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
+    [self.backVc addGestureRecognizer:pan];
+    [self.view addSubview:_backVc];
+
+    //底部图片添加渐变
+    //渐变层
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+
+    //渐变颜色
+    gradient.colors = @[(id)[UIColor clearColor].CGColor,(id)[UIColor blackColor].CGColor];
+
+    //设置不透明度
+    gradient.opacity = 0;
+
+    //渐变范围
+    gradient.frame = self.BottomImageVc.bounds;
+
+
+    //添加渐变
+    [self.BottomImageVc.layer addSublayer:gradient];
+
+    _gradient = gradient;
+}
+
+-(void)gradients{
+    //渐变层
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    
+    //渐变颜色
+    gradient.colors = @[(id)[UIColor redColor].CGColor,(id)[UIColor greenColor].CGColor,(id)[UIColor blueColor].CGColor];
+    
+    //渐变范围
+    gradient.frame = self.BottomImageVc.bounds;
+    
+    //渐变方向
+    gradient.startPoint = CGPointMake(0, 0);
+    gradient.endPoint   = CGPointMake(1, 0);
+    
+    //颜色从哪个位置开始渐变 1 == 100%
+    gradient.locations =@[@0.3,@0.6];
+    
+    //添加渐变
+    [self.BottomImageVc.layer addSublayer:gradient];
+}
+
+
+-(void)pan:(UIPanGestureRecognizer *)pan{
+    
+    //旋转角度
+    CGPoint transP = [pan translationInView:self.backVc];
+    
+    CATransform3D transform = CATransform3DIdentity;
+    //立体效果 近大远小
+    transform.m34 = -1 / 200.0;
+    
+    self.gradient.opacity = transP.y * 1/ 200.0;
+    
+    CGFloat angle = transP.y * M_PI / 200.0;
+    
+    //上半部分图片旋转
+    self.TopImageVc.layer.transform = CATransform3DRotate(transform, -angle, 1, 0, 0);
+    
+    if (pan.state == UIGestureRecognizerStateEnded) {
+        
+        //透明度为0
+        self.gradient.opacity = 0;
+        
+        //弹簧效果
+        /*
+         Duration:动画执行时长
+         delay:是否延时
+         Damping:弹簧系数 值越小，弹得越狠
+         SpringVelocity:弹簧初始系数
+         options:动画执行速度
+         */
+        [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.25 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            //让上部图片反弹回去
+            self.TopImageVc.layer.transform = CATransform3DIdentity;
+        } completion:nil];
+        
+        
+        
+    }
+}
+
+
 
 //幸运大转盘
 -(void)setluck{

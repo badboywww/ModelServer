@@ -47,6 +47,11 @@
 		5793710A2191663F0001CEFD /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579371092191663F0001CEFD /* WheelView.m */; };
 		5793710C2191668E0001CEFD /* WheelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5793710B2191668E0001CEFD /* WheelView.xib */; };
 		5793710F219180BD0001CEFD /* WheelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793710E219180BD0001CEFD /* WheelButton.m */; };
+		5793711821940F3C0001CEFD /* MusicalvibrationVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793711721940F3C0001CEFD /* MusicalvibrationVc.m */; };
+		5793711B219412270001CEFD /* ReflectionVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793711A219412270001CEFD /* ReflectionVc.m */; };
+		5793711D21941AB00001CEFD /* ReflectionVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5793711C21941AB00001CEFD /* ReflectionVc.xib */; };
+		57937120219423750001CEFD /* ReflectionCodeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793711F219423750001CEFD /* ReflectionCodeVc.m */; };
+		5793712321942C500001CEFD /* DrawVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793712221942C500001CEFD /* DrawVc.m */; };
 		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +134,15 @@
 		5793710B2191668E0001CEFD /* WheelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WheelView.xib; sourceTree = "<group>"; };
 		5793710D219180BD0001CEFD /* WheelButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WheelButton.h; sourceTree = "<group>"; };
 		5793710E219180BD0001CEFD /* WheelButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelButton.m; sourceTree = "<group>"; };
+		5793711621940F3C0001CEFD /* MusicalvibrationVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicalvibrationVc.h; sourceTree = "<group>"; };
+		5793711721940F3C0001CEFD /* MusicalvibrationVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicalvibrationVc.m; sourceTree = "<group>"; };
+		57937119219412270001CEFD /* ReflectionVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReflectionVc.h; sourceTree = "<group>"; };
+		5793711A219412270001CEFD /* ReflectionVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReflectionVc.m; sourceTree = "<group>"; };
+		5793711C21941AB00001CEFD /* ReflectionVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectionVc.xib; sourceTree = "<group>"; };
+		5793711E219423750001CEFD /* ReflectionCodeVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReflectionCodeVc.h; sourceTree = "<group>"; };
+		5793711F219423750001CEFD /* ReflectionCodeVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReflectionCodeVc.m; sourceTree = "<group>"; };
+		5793712121942C500001CEFD /* DrawVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawVc.h; sourceTree = "<group>"; };
+		5793712221942C500001CEFD /* DrawVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawVc.m; sourceTree = "<group>"; };
 		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
 		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
 		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,6 +370,15 @@
 				5793710B2191668E0001CEFD /* WheelView.xib */,
 				5793710D219180BD0001CEFD /* WheelButton.h */,
 				5793710E219180BD0001CEFD /* WheelButton.m */,
+				5793711621940F3C0001CEFD /* MusicalvibrationVc.h */,
+				5793711721940F3C0001CEFD /* MusicalvibrationVc.m */,
+				57937119219412270001CEFD /* ReflectionVc.h */,
+				5793711A219412270001CEFD /* ReflectionVc.m */,
+				5793711C21941AB00001CEFD /* ReflectionVc.xib */,
+				5793711E219423750001CEFD /* ReflectionCodeVc.h */,
+				5793711F219423750001CEFD /* ReflectionCodeVc.m */,
+				5793712121942C500001CEFD /* DrawVc.h */,
+				5793712221942C500001CEFD /* DrawVc.m */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -437,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5702EBC72175BED200104820 /* LaunchScreen.storyboard in Resources */,
+				5793711D21941AB00001CEFD /* ReflectionVc.xib in Resources */,
 				5702EBC42175BED200104820 /* Assets.xcassets in Resources */,
 				5793710C2191668E0001CEFD /* WheelView.xib in Resources */,
 				5702EBC22175BED100104820 /* Main.storyboard in Resources */,
@@ -496,11 +520,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5702EC1C2175C35700104820 /* PhotoSingle.m in Sources */,
+				5793711821940F3C0001CEFD /* MusicalvibrationVc.m in Sources */,
 				5702EC34217DF14200104820 /* CALayerViewController.m in Sources */,
 				5702EC152175C35700104820 /* MyImgeView.m in Sources */,
 				5702EBBF2175BED100104820 /* ViewController.m in Sources */,
 				57937107219134FC0001CEFD /* UIView+CALayer.m in Sources */,
 				5702EC162175C35700104820 /* pieView.m in Sources */,
+				5793711B219412270001CEFD /* ReflectionVc.m in Sources */,
 				5702EC282175C38C00104820 /* dataStorageViewController.m in Sources */,
 				5702EC0D2175C35700104820 /* DragandDropViewController.m in Sources */,
 				5702EC292175C38D00104820 /* Person.m in Sources */,
@@ -514,6 +540,7 @@
 				5702EC112175C35700104820 /* DrawView.m in Sources */,
 				5702EC132175C35700104820 /* OneView.m in Sources */,
 				5702EC102175C35700104820 /* UIKitDrawingViewController.m in Sources */,
+				57937120219423750001CEFD /* ReflectionCodeVc.m in Sources */,
 				5702EC2A2175C38D00104820 /* HRRequestTools.m in Sources */,
 				5702EC202175C35700104820 /* PhotoCollectionViewCell.m in Sources */,
 				5702EC2F2178B41C00104820 /* UIView+HRFrame.m in Sources */,
@@ -526,6 +553,7 @@
 				5702EC1F2175C35700104820 /* PhotoSelectorView.m in Sources */,
 				5793710F219180BD0001CEFD /* WheelButton.m in Sources */,
 				5702EC1A2175C35700104820 /* UIImage+Watermark.m in Sources */,
+				5793712321942C500001CEFD /* DrawVc.m in Sources */,
 				5702EC1E2175C35700104820 /* PhotoModel.m in Sources */,
 				5702EC0F2175C35700104820 /* MyOneViewController.m in Sources */,
 				578F1E2A21816A60002D9BC1 /* UIColor+MyColor.m in Sources */,
