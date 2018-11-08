@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="RAi-Ef-WwY" customClass="WheelView">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LuckyBaseBackground" translatesAutoresizingMaskIntoConstraints="NO" id="CqW-mq-Nut">
+                    <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LuckyRotateWheel" translatesAutoresizingMaskIntoConstraints="NO" id="qbI-xl-aez" userLabel="ContentVc">
+                    <rect key="frame" x="0.0" y="0.0" width="286" height="286"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="873-GF-3Qn">
+                    <rect key="frame" x="103" y="103" width="81" height="81"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="LuckyCenterButton"/>
+                    <connections>
+                        <action selector="startChooseAction:" destination="RAi-Ef-WwY" eventType="touchUpInside" id="Wyw-qe-Jtp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qbI-xl-aez" secondAttribute="bottom" id="Jw6-VM-Vh9"/>
+                <constraint firstAttribute="bottom" secondItem="CqW-mq-Nut" secondAttribute="bottom" id="M2c-cZ-iOz"/>
+                <constraint firstItem="qbI-xl-aez" firstAttribute="top" secondItem="RAi-Ef-WwY" secondAttribute="top" id="M9O-jy-Zm7"/>
+                <constraint firstItem="CqW-mq-Nut" firstAttribute="top" secondItem="RAi-Ef-WwY" secondAttribute="top" id="cDU-OR-P9T"/>
+                <constraint firstAttribute="trailing" secondItem="qbI-xl-aez" secondAttribute="trailing" id="e7Q-fM-6u7"/>
+                <constraint firstAttribute="trailing" secondItem="CqW-mq-Nut" secondAttribute="trailing" id="fzt-4i-Oig"/>
+                <constraint firstItem="CqW-mq-Nut" firstAttribute="leading" secondItem="RAi-Ef-WwY" secondAttribute="leading" id="h2n-31-H3q"/>
+                <constraint firstItem="qbI-xl-aez" firstAttribute="leading" secondItem="RAi-Ef-WwY" secondAttribute="leading" id="tSi-kj-FQS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentV" destination="qbI-xl-aez" id="aBg-Ry-bQH"/>
+            </connections>
+            <point key="canvasLocation" x="-1414" y="-303"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LuckyBaseBackground" width="286" height="286"/>
+        <image name="LuckyCenterButton" width="81" height="81"/>
+        <image name="LuckyRotateWheel" width="286" height="286"/>
+    </resources>
+</document>

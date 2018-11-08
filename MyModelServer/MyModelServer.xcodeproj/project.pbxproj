@@ -42,6 +42,16 @@
 		5702EC302178B41C00104820 /* UIImage+HRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC2E2178B41C00104820 /* UIImage+HRExtension.m */; };
 		5702EC34217DF14200104820 /* CALayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC33217DF14200104820 /* CALayerViewController.m */; };
 		5702EC37217DF26400104820 /* myCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC36217DF26400104820 /* myCALayer.m */; };
+		578F1E2A21816A60002D9BC1 /* UIColor+MyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */; };
+		57937107219134FC0001CEFD /* UIView+CALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57937106219134FC0001CEFD /* UIView+CALayer.m */; };
+		5793710A2191663F0001CEFD /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579371092191663F0001CEFD /* WheelView.m */; };
+		5793710C2191668E0001CEFD /* WheelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5793710B2191668E0001CEFD /* WheelView.xib */; };
+		5793710F219180BD0001CEFD /* WheelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793710E219180BD0001CEFD /* WheelButton.m */; };
+		5793711821940F3C0001CEFD /* MusicalvibrationVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793711721940F3C0001CEFD /* MusicalvibrationVc.m */; };
+		5793711B219412270001CEFD /* ReflectionVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793711A219412270001CEFD /* ReflectionVc.m */; };
+		5793711D21941AB00001CEFD /* ReflectionVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5793711C21941AB00001CEFD /* ReflectionVc.xib */; };
+		57937120219423750001CEFD /* ReflectionCodeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793711F219423750001CEFD /* ReflectionCodeVc.m */; };
+		5793712321942C500001CEFD /* DrawVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793712221942C500001CEFD /* DrawVc.m */; };
 		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +125,24 @@
 		5702EC33217DF14200104820 /* CALayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CALayerViewController.m; sourceTree = "<group>"; };
 		5702EC35217DF26400104820 /* myCALayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myCALayer.h; sourceTree = "<group>"; };
 		5702EC36217DF26400104820 /* myCALayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myCALayer.m; sourceTree = "<group>"; };
+		578F1E2821816A60002D9BC1 /* UIColor+MyColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColor.h"; sourceTree = "<group>"; };
+		578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColor.m"; sourceTree = "<group>"; };
+		57937105219134FC0001CEFD /* UIView+CALayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CALayer.h"; sourceTree = "<group>"; };
+		57937106219134FC0001CEFD /* UIView+CALayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CALayer.m"; sourceTree = "<group>"; };
+		579371082191663F0001CEFD /* WheelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
+		579371092191663F0001CEFD /* WheelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
+		5793710B2191668E0001CEFD /* WheelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WheelView.xib; sourceTree = "<group>"; };
+		5793710D219180BD0001CEFD /* WheelButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WheelButton.h; sourceTree = "<group>"; };
+		5793710E219180BD0001CEFD /* WheelButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WheelButton.m; sourceTree = "<group>"; };
+		5793711621940F3C0001CEFD /* MusicalvibrationVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicalvibrationVc.h; sourceTree = "<group>"; };
+		5793711721940F3C0001CEFD /* MusicalvibrationVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicalvibrationVc.m; sourceTree = "<group>"; };
+		57937119219412270001CEFD /* ReflectionVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReflectionVc.h; sourceTree = "<group>"; };
+		5793711A219412270001CEFD /* ReflectionVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReflectionVc.m; sourceTree = "<group>"; };
+		5793711C21941AB00001CEFD /* ReflectionVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectionVc.xib; sourceTree = "<group>"; };
+		5793711E219423750001CEFD /* ReflectionCodeVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReflectionCodeVc.h; sourceTree = "<group>"; };
+		5793711F219423750001CEFD /* ReflectionCodeVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReflectionCodeVc.m; sourceTree = "<group>"; };
+		5793712121942C500001CEFD /* DrawVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawVc.h; sourceTree = "<group>"; };
+		5793712221942C500001CEFD /* DrawVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawVc.m; sourceTree = "<group>"; };
 		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
 		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
 		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +287,7 @@
 		5702EBF42175C35700104820 /* MyTools */ = {
 			isa = PBXGroup;
 			children = (
+				57937104219134D10001CEFD /* CALayerView */,
 				5702EC2D2178B41C00104820 /* UIImage+HRExtension.h */,
 				5702EC2E2178B41C00104820 /* UIImage+HRExtension.m */,
 				5702EC2B2178B41B00104820 /* UIView+HRFrame.h */,
@@ -269,6 +298,8 @@
 				5702EBF92175C35700104820 /* NSString+Extension.m */,
 				5702EBFA2175C35700104820 /* UIImage+Watermark.h */,
 				5702EBF72175C35700104820 /* UIImage+Watermark.m */,
+				578F1E2821816A60002D9BC1 /* UIColor+MyColor.h */,
+				578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */,
 			);
 			path = MyTools;
 			sourceTree = "<group>";
@@ -334,8 +365,31 @@
 				5702EC33217DF14200104820 /* CALayerViewController.m */,
 				5702EC35217DF26400104820 /* myCALayer.h */,
 				5702EC36217DF26400104820 /* myCALayer.m */,
+				579371082191663F0001CEFD /* WheelView.h */,
+				579371092191663F0001CEFD /* WheelView.m */,
+				5793710B2191668E0001CEFD /* WheelView.xib */,
+				5793710D219180BD0001CEFD /* WheelButton.h */,
+				5793710E219180BD0001CEFD /* WheelButton.m */,
+				5793711621940F3C0001CEFD /* MusicalvibrationVc.h */,
+				5793711721940F3C0001CEFD /* MusicalvibrationVc.m */,
+				57937119219412270001CEFD /* ReflectionVc.h */,
+				5793711A219412270001CEFD /* ReflectionVc.m */,
+				5793711C21941AB00001CEFD /* ReflectionVc.xib */,
+				5793711E219423750001CEFD /* ReflectionCodeVc.h */,
+				5793711F219423750001CEFD /* ReflectionCodeVc.m */,
+				5793712121942C500001CEFD /* DrawVc.h */,
+				5793712221942C500001CEFD /* DrawVc.m */,
 			);
 			path = CALayer;
+			sourceTree = "<group>";
+		};
+		57937104219134D10001CEFD /* CALayerView */ = {
+			isa = PBXGroup;
+			children = (
+				57937105219134FC0001CEFD /* UIView+CALayer.h */,
+				57937106219134FC0001CEFD /* UIView+CALayer.m */,
+			);
+			path = CALayerView;
 			sourceTree = "<group>";
 		};
 		D3315D2708C5C8DD4E07E360 /* Frameworks */ = {
@@ -406,7 +460,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5702EBC72175BED200104820 /* LaunchScreen.storyboard in Resources */,
+				5793711D21941AB00001CEFD /* ReflectionVc.xib in Resources */,
 				5702EBC42175BED200104820 /* Assets.xcassets in Resources */,
+				5793710C2191668E0001CEFD /* WheelView.xib in Resources */,
 				5702EBC22175BED100104820 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,14 +520,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5702EC1C2175C35700104820 /* PhotoSingle.m in Sources */,
+				5793711821940F3C0001CEFD /* MusicalvibrationVc.m in Sources */,
 				5702EC34217DF14200104820 /* CALayerViewController.m in Sources */,
 				5702EC152175C35700104820 /* MyImgeView.m in Sources */,
 				5702EBBF2175BED100104820 /* ViewController.m in Sources */,
+				57937107219134FC0001CEFD /* UIView+CALayer.m in Sources */,
 				5702EC162175C35700104820 /* pieView.m in Sources */,
+				5793711B219412270001CEFD /* ReflectionVc.m in Sources */,
 				5702EC282175C38C00104820 /* dataStorageViewController.m in Sources */,
 				5702EC0D2175C35700104820 /* DragandDropViewController.m in Sources */,
 				5702EC292175C38D00104820 /* Person.m in Sources */,
 				5702EBCA2175BED200104820 /* main.m in Sources */,
+				5793710A2191663F0001CEFD /* WheelView.m in Sources */,
 				5702EC1D2175C35700104820 /* PhotoViewController.m in Sources */,
 				5702EBBC2175BED100104820 /* AppDelegate.m in Sources */,
 				5702EC1B2175C35700104820 /* NSString+Extension.m in Sources */,
@@ -480,6 +540,7 @@
 				5702EC112175C35700104820 /* DrawView.m in Sources */,
 				5702EC132175C35700104820 /* OneView.m in Sources */,
 				5702EC102175C35700104820 /* UIKitDrawingViewController.m in Sources */,
+				57937120219423750001CEFD /* ReflectionCodeVc.m in Sources */,
 				5702EC2A2175C38D00104820 /* HRRequestTools.m in Sources */,
 				5702EC202175C35700104820 /* PhotoCollectionViewCell.m in Sources */,
 				5702EC2F2178B41C00104820 /* UIView+HRFrame.m in Sources */,
@@ -490,9 +551,12 @@
 				5702EC0E2175C35700104820 /* RedView.m in Sources */,
 				5702EC302178B41C00104820 /* UIImage+HRExtension.m in Sources */,
 				5702EC1F2175C35700104820 /* PhotoSelectorView.m in Sources */,
+				5793710F219180BD0001CEFD /* WheelButton.m in Sources */,
 				5702EC1A2175C35700104820 /* UIImage+Watermark.m in Sources */,
+				5793712321942C500001CEFD /* DrawVc.m in Sources */,
 				5702EC1E2175C35700104820 /* PhotoModel.m in Sources */,
 				5702EC0F2175C35700104820 /* MyOneViewController.m in Sources */,
+				578F1E2A21816A60002D9BC1 /* UIColor+MyColor.m in Sources */,
 				5702EC122175C35700104820 /* QuartzViewController.m in Sources */,
 				5702EC192175C35700104820 /* UIView+NTES.m in Sources */,
 			);
@@ -647,6 +711,38 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"CTAssetsPickerController\"",
+					"-l\"LBPhotoBrowser\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"PureLayout\"",
+					"-l\"Reachability\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mr.GBLW.MyModelServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -667,6 +763,38 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"CTAssetsPickerController\"",
+					"-l\"LBPhotoBrowser\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"PureLayout\"",
+					"-l\"Reachability\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mr.GBLW.MyModelServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
