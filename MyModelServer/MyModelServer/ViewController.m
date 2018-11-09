@@ -54,6 +54,7 @@
                                             @"选择图片",
                                             @"WMT",
                                             @"CALayer",
+                                            @"微博",
                                             nil];
     [_dataArray addObjectsFromArray:arr];
     
@@ -124,6 +125,10 @@
     }else if(indexPath.row == 7){
         //CALayer
         CALayerViewController *vc=[CALayerViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 8){
+        //weibo
+        WeiboAnimationViewController *vc = [WeiboAnimationViewController new];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

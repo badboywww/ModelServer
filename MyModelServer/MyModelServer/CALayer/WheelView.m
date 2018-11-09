@@ -72,10 +72,7 @@
 -(void)setUP{
     
 self.contentV.userInteractionEnabled = YES;
-    
-    
-   
-    
+
     //创建按钮
     CGFloat btnW = 68;
     CGFloat btnH = 143;

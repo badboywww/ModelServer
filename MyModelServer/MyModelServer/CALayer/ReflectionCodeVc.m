@@ -22,6 +22,7 @@
     
 }
 
+//添加图片设置倒影层
 -(void)setAddImgae:(UIImage *)image{
     
     NSLog(@"%lf",(float)self.bounds.size.height);

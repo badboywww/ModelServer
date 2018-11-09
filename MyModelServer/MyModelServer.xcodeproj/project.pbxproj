@@ -52,6 +52,14 @@
 		5793711D21941AB00001CEFD /* ReflectionVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5793711C21941AB00001CEFD /* ReflectionVc.xib */; };
 		57937120219423750001CEFD /* ReflectionCodeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793711F219423750001CEFD /* ReflectionCodeVc.m */; };
 		5793712321942C500001CEFD /* DrawVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793712221942C500001CEFD /* DrawVc.m */; };
+		57937126219559D60001CEFD /* QQButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57937125219559D60001CEFD /* QQButton.m */; };
+		57937128219559F70001CEFD /* QQButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57937127219559F70001CEFD /* QQButton.xib */; };
+		5793712B21955B590001CEFD /* BageValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793712A21955B590001CEFD /* BageValue.m */; };
+		5793712F219575880001CEFD /* WeiboAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793712E219575880001CEFD /* WeiboAnimationViewController.m */; };
+		57937138219579FB0001CEFD /* ComposeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57937136219579FB0001CEFD /* ComposeVC.m */; };
+		57937139219579FB0001CEFD /* ComposeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57937137219579FB0001CEFD /* ComposeVC.xib */; };
+		5793713C21957F5C0001CEFD /* MenuItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793713B21957F5C0001CEFD /* MenuItemModel.m */; };
+		5793713F219586F70001CEFD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 5793713E219586F70001CEFD /* Item.m */; };
 		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +151,20 @@
 		5793711F219423750001CEFD /* ReflectionCodeVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReflectionCodeVc.m; sourceTree = "<group>"; };
 		5793712121942C500001CEFD /* DrawVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawVc.h; sourceTree = "<group>"; };
 		5793712221942C500001CEFD /* DrawVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawVc.m; sourceTree = "<group>"; };
+		57937124219559D60001CEFD /* QQButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QQButton.h; sourceTree = "<group>"; };
+		57937125219559D60001CEFD /* QQButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQButton.m; sourceTree = "<group>"; };
+		57937127219559F70001CEFD /* QQButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QQButton.xib; sourceTree = "<group>"; };
+		5793712921955B590001CEFD /* BageValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BageValue.h; sourceTree = "<group>"; };
+		5793712A21955B590001CEFD /* BageValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BageValue.m; sourceTree = "<group>"; };
+		5793712D219575880001CEFD /* WeiboAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeiboAnimationViewController.h; sourceTree = "<group>"; };
+		5793712E219575880001CEFD /* WeiboAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeiboAnimationViewController.m; sourceTree = "<group>"; };
+		57937135219579FB0001CEFD /* ComposeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeVC.h; sourceTree = "<group>"; };
+		57937136219579FB0001CEFD /* ComposeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeVC.m; sourceTree = "<group>"; };
+		57937137219579FB0001CEFD /* ComposeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeVC.xib; sourceTree = "<group>"; };
+		5793713A21957F5C0001CEFD /* MenuItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuItemModel.h; sourceTree = "<group>"; };
+		5793713B21957F5C0001CEFD /* MenuItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuItemModel.m; sourceTree = "<group>"; };
+		5793713D219586F70001CEFD /* Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		5793713E219586F70001CEFD /* Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
 		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
 		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +212,7 @@
 		5702EBB92175BED100104820 /* MyModelServer */ = {
 			isa = PBXGroup;
 			children = (
+				5793712C219573D20001CEFD /* Weibo */,
 				5702EC31217DF12800104820 /* CALayer */,
 				5702EC222175C38C00104820 /* dataGroup */,
 				5702EBDF2175C35700104820 /* Quartz2D */,
@@ -379,6 +402,11 @@
 				5793711F219423750001CEFD /* ReflectionCodeVc.m */,
 				5793712121942C500001CEFD /* DrawVc.h */,
 				5793712221942C500001CEFD /* DrawVc.m */,
+				57937124219559D60001CEFD /* QQButton.h */,
+				57937125219559D60001CEFD /* QQButton.m */,
+				57937127219559F70001CEFD /* QQButton.xib */,
+				5793712921955B590001CEFD /* BageValue.h */,
+				5793712A21955B590001CEFD /* BageValue.m */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -390,6 +418,22 @@
 				57937106219134FC0001CEFD /* UIView+CALayer.m */,
 			);
 			path = CALayerView;
+			sourceTree = "<group>";
+		};
+		5793712C219573D20001CEFD /* Weibo */ = {
+			isa = PBXGroup;
+			children = (
+				5793712D219575880001CEFD /* WeiboAnimationViewController.h */,
+				5793712E219575880001CEFD /* WeiboAnimationViewController.m */,
+				57937135219579FB0001CEFD /* ComposeVC.h */,
+				57937136219579FB0001CEFD /* ComposeVC.m */,
+				57937137219579FB0001CEFD /* ComposeVC.xib */,
+				5793713A21957F5C0001CEFD /* MenuItemModel.h */,
+				5793713B21957F5C0001CEFD /* MenuItemModel.m */,
+				5793713D219586F70001CEFD /* Item.h */,
+				5793713E219586F70001CEFD /* Item.m */,
+			);
+			path = Weibo;
 			sourceTree = "<group>";
 		};
 		D3315D2708C5C8DD4E07E360 /* Frameworks */ = {
@@ -463,7 +507,9 @@
 				5793711D21941AB00001CEFD /* ReflectionVc.xib in Resources */,
 				5702EBC42175BED200104820 /* Assets.xcassets in Resources */,
 				5793710C2191668E0001CEFD /* WheelView.xib in Resources */,
+				57937139219579FB0001CEFD /* ComposeVC.xib in Resources */,
 				5702EBC22175BED100104820 /* Main.storyboard in Resources */,
+				57937128219559F70001CEFD /* QQButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,9 +574,11 @@
 				5702EC162175C35700104820 /* pieView.m in Sources */,
 				5793711B219412270001CEFD /* ReflectionVc.m in Sources */,
 				5702EC282175C38C00104820 /* dataStorageViewController.m in Sources */,
+				57937138219579FB0001CEFD /* ComposeVC.m in Sources */,
 				5702EC0D2175C35700104820 /* DragandDropViewController.m in Sources */,
 				5702EC292175C38D00104820 /* Person.m in Sources */,
 				5702EBCA2175BED200104820 /* main.m in Sources */,
+				5793712F219575880001CEFD /* WeiboAnimationViewController.m in Sources */,
 				5793710A2191663F0001CEFD /* WheelView.m in Sources */,
 				5702EC1D2175C35700104820 /* PhotoViewController.m in Sources */,
 				5702EBBC2175BED100104820 /* AppDelegate.m in Sources */,
@@ -539,10 +587,12 @@
 				5702EC37217DF26400104820 /* myCALayer.m in Sources */,
 				5702EC112175C35700104820 /* DrawView.m in Sources */,
 				5702EC132175C35700104820 /* OneView.m in Sources */,
+				5793713F219586F70001CEFD /* Item.m in Sources */,
 				5702EC102175C35700104820 /* UIKitDrawingViewController.m in Sources */,
 				57937120219423750001CEFD /* ReflectionCodeVc.m in Sources */,
 				5702EC2A2175C38D00104820 /* HRRequestTools.m in Sources */,
 				5702EC202175C35700104820 /* PhotoCollectionViewCell.m in Sources */,
+				5793712B21955B590001CEFD /* BageValue.m in Sources */,
 				5702EC2F2178B41C00104820 /* UIView+HRFrame.m in Sources */,
 				5702EC212175C35700104820 /* GetPhotoViewController.m in Sources */,
 				5702EC0C2175C35700104820 /* TwoViewController.m in Sources */,
@@ -552,9 +602,11 @@
 				5702EC302178B41C00104820 /* UIImage+HRExtension.m in Sources */,
 				5702EC1F2175C35700104820 /* PhotoSelectorView.m in Sources */,
 				5793710F219180BD0001CEFD /* WheelButton.m in Sources */,
+				5793713C21957F5C0001CEFD /* MenuItemModel.m in Sources */,
 				5702EC1A2175C35700104820 /* UIImage+Watermark.m in Sources */,
 				5793712321942C500001CEFD /* DrawVc.m in Sources */,
 				5702EC1E2175C35700104820 /* PhotoModel.m in Sources */,
+				57937126219559D60001CEFD /* QQButton.m in Sources */,
 				5702EC0F2175C35700104820 /* MyOneViewController.m in Sources */,
 				578F1E2A21816A60002D9BC1 /* UIColor+MyColor.m in Sources */,
 				5702EC122175C35700104820 /* QuartzViewController.m in Sources */,

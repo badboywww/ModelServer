@@ -112,22 +112,27 @@
 //    [self.view addSubview:refCodeVc];
     
 #pragma mark 粒子效果
-    UIButton *oneBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [oneBtn setTitle:@"开始" forState:UIControlStateNormal];
-    oneBtn.frame = CGRectMake(50, 75, 50, 30);
-    [oneBtn addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:oneBtn];
+//    UIButton *oneBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [oneBtn setTitle:@"开始" forState:UIControlStateNormal];
+//    oneBtn.frame = CGRectMake(50, 75, 50, 30);
+//    [oneBtn addTarget:self action:@selector(start:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:oneBtn];
+//
+//    UIButton *twoBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [twoBtn setTitle:@"重绘" forState:UIControlStateNormal];
+//    twoBtn.frame = CGRectMake(Swidth - 100, 75, 50, 30);
+//    [twoBtn addTarget:self action:@selector(reDraw:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:twoBtn];
+//
+//    _drVc = [[DrawVc alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY(oneBtn.frame), Swidth,Sheight-CGRectGetMaxY(oneBtn.frame))];
+//    _drVc.backgroundColor = [UIColor whiteColor];
+//
+//    [self.view addSubview:_drVc];
     
-    UIButton *twoBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [twoBtn setTitle:@"重绘" forState:UIControlStateNormal];
-    twoBtn.frame = CGRectMake(Swidth - 100, 75, 50, 30);
-    [twoBtn addTarget:self action:@selector(reDraw:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:twoBtn];
-    
-    _drVc = [[DrawVc alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY(oneBtn.frame), Swidth,Sheight-CGRectGetMaxY(oneBtn.frame))];
-    _drVc.backgroundColor = [UIColor whiteColor];
-    
-    [self.view addSubview:_drVc];
+#pragma mark QQ粘性布局
+    _qqbuttonVc = [[QQButton alloc]initWithFrame:CGRectMake(0, 64, Swidth, Sheight-64)];
+    _qqbuttonVc.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:_qqbuttonVc];
  
 }
 -(void)start:(UIButton *)sender{
@@ -195,7 +200,6 @@
 
     _gradient = gradient;
 }
-
 -(void)gradients{
     //渐变层
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -216,8 +220,6 @@
     //添加渐变
     [self.BottomImageVc.layer addSublayer:gradient];
 }
-
-
 -(void)pan:(UIPanGestureRecognizer *)pan{
     
     //旋转角度
@@ -256,7 +258,6 @@
         
     }
 }
-
 
 
 //幸运大转盘
@@ -301,6 +302,30 @@
     _myRedVc.backgroundColor = [UIColor redColor];
     [self.view addSubview:_myRedVc];
 }
+-(void)AnimationgroupAction{
+    
+    //设置动画组
+    CAAnimationGroup *group = [CAAnimationGroup animation];
+    
+    //动画一: 缩放
+    CABasicAnimation *scaleAnim = [CABasicAnimation animation];
+    scaleAnim.keyPath = @"transform.scale";
+    scaleAnim.toValue = @0.5;
+    
+    //动画二: 平移
+    CABasicAnimation *Anim = [CABasicAnimation animation];
+    Anim.keyPath = @"position.y";
+    Anim.toValue = @(400);
+    
+    //加载动画
+    group.animations = @[scaleAnim,Anim];
+    
+    group.removedOnCompletion = NO;
+    group.fillMode = kCAFillModeForwards;
+    
+    [self.myRedVc.layer addAnimation:group forKey:nil];
+    
+}
 
 //转场动画
 -(void)TransitionAnimation{
@@ -317,7 +342,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_myImageVc];
 }
-
+-(void)TransitionanimationAction{
+    
+#pragma mark 进场动画
+    [self.myImageVc.layer addAnimation:[UIImageView setTransitionAnimationImageView:self.myImageVc imageArray:ImageArray AnimationType:@"cube" AnimationSubtype:@"kCATransitionFromRight"] forKey:nil];
+}
 //3D 效果
 -(void)myCALayer{
     
@@ -391,39 +420,6 @@
     
 }
 
--(void)AnimationgroupAction{
-    
-    //设置动画组
-    CAAnimationGroup *group = [CAAnimationGroup animation];
-    
-    //动画一: 缩放
-    CABasicAnimation *scaleAnim = [CABasicAnimation animation];
-    scaleAnim.keyPath = @"transform.scale";
-    scaleAnim.toValue = @0.5;
-    
-    //动画二: 平移
-    CABasicAnimation *Anim = [CABasicAnimation animation];
-    Anim.keyPath = @"position.y";
-    Anim.toValue = @(400);
-    
-    //加载动画
-    group.animations = @[scaleAnim,Anim];
-    
-    group.removedOnCompletion = NO;
-    group.fillMode = kCAFillModeForwards;
-    
-    [self.myRedVc.layer addAnimation:group forKey:nil];
-    
-}
-
-
-
-
--(void)TransitionanimationAction{
-
-#pragma mark 进场动画
-    [self.myImageVc.layer addAnimation:[UIImageView setTransitionAnimationImageView:self.myImageVc imageArray:ImageArray AnimationType:@"cube" AnimationSubtype:@"kCATransitionFromRight"] forKey:nil];
-}
 
 -(void)doudong{
 
