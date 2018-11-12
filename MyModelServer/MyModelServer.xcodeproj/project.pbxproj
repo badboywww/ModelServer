@@ -212,7 +212,6 @@
 		5702EBB92175BED100104820 /* MyModelServer */ = {
 			isa = PBXGroup;
 			children = (
-				5793714021994F610001CEFD /* LotteryTicketGroup */,
 				5793712C219573D20001CEFD /* Weibo */,
 				5702EC31217DF12800104820 /* CALayer */,
 				5702EC222175C38C00104820 /* dataGroup */,
@@ -435,13 +434,6 @@
 				5793713E219586F70001CEFD /* Item.m */,
 			);
 			path = Weibo;
-			sourceTree = "<group>";
-		};
-		5793714021994F610001CEFD /* LotteryTicketGroup */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LotteryTicketGroup;
 			sourceTree = "<group>";
 		};
 		D3315D2708C5C8DD4E07E360 /* Frameworks */ = {

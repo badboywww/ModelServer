@@ -25,6 +25,8 @@
     
     [self setUI];
     
+    //66666
+    
 }
 
 -(void)setNav{
