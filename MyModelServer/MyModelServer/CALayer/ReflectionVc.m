@@ -45,6 +45,7 @@
     return self;
 }
 
+//倒影层
 -(void)ReflectionAction{
     
     CAReplicatorLayer *repL = (CAReplicatorLayer *)self.layer;

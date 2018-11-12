@@ -42,6 +42,7 @@
     
 }
 
+//开始绘制
 -(void)start{
     //添加动画
     CAKeyframeAnimation *anim =[CAKeyframeAnimation animation];
@@ -53,6 +54,7 @@
     [self.dotLayer addAnimation:anim forKey:nil];
 }
 
+//重新绘制
 -(void)reDraw{
     //把路径清空
     [self.path removeAllPoints];
@@ -62,6 +64,7 @@
     [self.dotLayer removeAllAnimations];
 }
 
+//添加手势
 -(void)MyPan{
     
     //添加手势
@@ -88,6 +91,7 @@
     repL.instanceDelay = 0.25;
 }
 
+//手势动画
 -(void)pan:(UIPanGestureRecognizer *)pan{
     
     
@@ -113,7 +117,7 @@
     
 }
 
-
+//绘制
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     

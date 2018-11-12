@@ -13,6 +13,7 @@
 #import "ReflectionVc.h"
 #import "ReflectionCodeVc.h"
 #import "DrawVc.h"
+#import "QQButton.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CALayerViewController : UIViewController
@@ -29,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic , strong)UIImageView *BottomImageVc;
 @property(nonatomic , strong)UIView *backVc;
 @property (nonatomic , weak)CAGradientLayer *gradient;
+
+@property (nonatomic , strong)QQButton *qqbuttonVc;
 
 @end
 

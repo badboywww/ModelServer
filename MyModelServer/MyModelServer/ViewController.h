@@ -14,6 +14,7 @@
 #import "WMT/MyOneViewController.h"
 #import "dataStorageViewController.h"
 #import "CALayer/CALayerViewController.h"
+#import "Weibo/WeiboAnimationViewController.h"
 @interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic , strong) UITableView *tableVc;
