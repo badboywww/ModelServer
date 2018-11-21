@@ -42,6 +42,8 @@
 		5702EC302178B41C00104820 /* UIImage+HRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC2E2178B41C00104820 /* UIImage+HRExtension.m */; };
 		5702EC34217DF14200104820 /* CALayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC33217DF14200104820 /* CALayerViewController.m */; };
 		5702EC37217DF26400104820 /* myCALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5702EC36217DF26400104820 /* myCALayer.m */; };
+		57600AC021A534670034D4EB /* MultithreadingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57600ABF21A534670034D4EB /* MultithreadingController.m */; };
+		57600AC321A541FB0034D4EB /* myThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 57600AC221A541FB0034D4EB /* myThread.m */; };
 		578F1E2A21816A60002D9BC1 /* UIColor+MyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */; };
 		57937107219134FC0001CEFD /* UIView+CALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57937106219134FC0001CEFD /* UIView+CALayer.m */; };
 		5793710A2191663F0001CEFD /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579371092191663F0001CEFD /* WheelView.m */; };
@@ -133,6 +135,10 @@
 		5702EC33217DF14200104820 /* CALayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CALayerViewController.m; sourceTree = "<group>"; };
 		5702EC35217DF26400104820 /* myCALayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myCALayer.h; sourceTree = "<group>"; };
 		5702EC36217DF26400104820 /* myCALayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myCALayer.m; sourceTree = "<group>"; };
+		57600ABE21A534670034D4EB /* MultithreadingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultithreadingController.h; sourceTree = "<group>"; };
+		57600ABF21A534670034D4EB /* MultithreadingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultithreadingController.m; sourceTree = "<group>"; };
+		57600AC121A541FB0034D4EB /* myThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myThread.h; sourceTree = "<group>"; };
+		57600AC221A541FB0034D4EB /* myThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myThread.m; sourceTree = "<group>"; };
 		578F1E2821816A60002D9BC1 /* UIColor+MyColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColor.h"; sourceTree = "<group>"; };
 		578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColor.m"; sourceTree = "<group>"; };
 		57937105219134FC0001CEFD /* UIView+CALayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CALayer.h"; sourceTree = "<group>"; };
@@ -212,6 +218,7 @@
 		5702EBB92175BED100104820 /* MyModelServer */ = {
 			isa = PBXGroup;
 			children = (
+				57600ABD21A532A70034D4EB /* Multithreading */,
 				5793712C219573D20001CEFD /* Weibo */,
 				5702EC31217DF12800104820 /* CALayer */,
 				5702EC222175C38C00104820 /* dataGroup */,
@@ -411,6 +418,17 @@
 			path = CALayer;
 			sourceTree = "<group>";
 		};
+		57600ABD21A532A70034D4EB /* Multithreading */ = {
+			isa = PBXGroup;
+			children = (
+				57600ABE21A534670034D4EB /* MultithreadingController.h */,
+				57600ABF21A534670034D4EB /* MultithreadingController.m */,
+				57600AC121A541FB0034D4EB /* myThread.h */,
+				57600AC221A541FB0034D4EB /* myThread.m */,
+			);
+			path = Multithreading;
+			sourceTree = "<group>";
+		};
 		57937104219134D10001CEFD /* CALayerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +618,7 @@
 				5702EC142175C35700104820 /* TwoView.m in Sources */,
 				5702EC0E2175C35700104820 /* RedView.m in Sources */,
 				5702EC302178B41C00104820 /* UIImage+HRExtension.m in Sources */,
+				57600AC321A541FB0034D4EB /* myThread.m in Sources */,
 				5702EC1F2175C35700104820 /* PhotoSelectorView.m in Sources */,
 				5793710F219180BD0001CEFD /* WheelButton.m in Sources */,
 				5793713C21957F5C0001CEFD /* MenuItemModel.m in Sources */,
@@ -610,6 +629,7 @@
 				5702EC0F2175C35700104820 /* MyOneViewController.m in Sources */,
 				578F1E2A21816A60002D9BC1 /* UIColor+MyColor.m in Sources */,
 				5702EC122175C35700104820 /* QuartzViewController.m in Sources */,
+				57600AC021A534670034D4EB /* MultithreadingController.m in Sources */,
 				5702EC192175C35700104820 /* UIView+NTES.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

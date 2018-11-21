@@ -57,6 +57,7 @@
                                             @"WMT",
                                             @"CALayer",
                                             @"微博",
+                                            @"多线程",
                                             nil];
     [_dataArray addObjectsFromArray:arr];
     
@@ -131,6 +132,9 @@
     }else if(indexPath.row == 8){
         //weibo
         WeiboAnimationViewController *vc = [WeiboAnimationViewController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 9){
+        MultithreadingController *vc = [MultithreadingController new];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

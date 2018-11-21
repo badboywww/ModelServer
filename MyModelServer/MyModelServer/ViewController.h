@@ -15,6 +15,7 @@
 #import "dataStorageViewController.h"
 #import "CALayer/CALayerViewController.h"
 #import "Weibo/WeiboAnimationViewController.h"
+#import "Multithreading/MultithreadingController.h"
 @interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic , strong) UITableView *tableVc;
