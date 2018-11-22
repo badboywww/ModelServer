@@ -23,11 +23,12 @@
 //票的总数
 @property (nonatomic , assign) NSUInteger totalticket;
 
+@property (nonatomic , strong) UIImage *image1;
+@property (nonatomic , strong) UIImage *image2;
 
 
 
 @end
-
 @implementation MultithreadingController
 
 - (void)viewDidLoad {
@@ -38,7 +39,7 @@
     [self setUI];
 }
 
-
+/* Nav */
 - (void)setNav {
     
     self.title = @"多线程";
@@ -47,9 +48,13 @@
     
     self.navigationItem.leftBarButtonItem=leftNavbar;
 }
+
+/* 返回 */
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+/* UI */
 - (void)setUI {
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -73,13 +78,16 @@
    
 }
 
-
+/* 点击事件 */
 - (void)BtnClick:(UIButton *)sender{
     
    
 //    [self pthread];
     
-    [self NsThread];
+//    [self NsThread];
+    
+    
+      [self GCDAction];
     
     
 }
@@ -119,20 +127,15 @@ void *run (void *param) {
 //    NSLog(@"%@",[NSThread mainThread]);    //主线程
     
    
-    //第一种创建线程的方式
-//    [self threadOne];
+    //第一种创建线程的方式  [self threadOne];
     
-    //第二种创建线程的方式
-//    [self threadTwo];
+    //第二种创建线程的方式  [self threadTwo];
     
-    //第二种创建线程的方式
-//    [self threadThree];
+    //第二种创建线程的方式  [self threadThree];
     
-    //线程的状态
-//    [self threadstatus];
+    //线程的状态          [self threadstatus];
     
-    //线程间通讯
-//    [self threadcommunication];
+    //线程间通讯          [self threadcommunication];
     
     //线程安全
     //假设有100张票
@@ -353,5 +356,511 @@ void *run (void *param) {
     
 }
 
+#pragma mark GCD
+
+- (void)GCDAction {
+    
+    //GCD基本使用  [self GCDBasicuse];
+    
+    //CGD线程间通讯 [self GCDcommunication];
+    
+    //GCD常用函数
+    [self GCDCommonmethod];
+}
+
+/* GCD 的基本使用 */
+- (void)GCDBasicuse{
+    //    dispatch_sync(dispatch_queue_t  _Nonnull queue, <#^(void)block#>) 同步方式
+    //    dispatch_async(dispatch_queue_t  _Nonnull queue, <#^(void)block#>)  异步方式
+    
+    
+    /*
+     1.创建并发队列
+     第一个参数:C语言的字符串,是一个标签 逆向书写
+     第二个参数:
+     DISPATCH_QUEUE_CONCURRENT 并发队列
+     DISPATCH_QUEUE_SERIAL     串行队列
+     */
+    
+    //    dispatch_queue_t queue1 = dispatch_queue_create("com.520it.download", DISPATCH_QUEUE_CONCURRENT);
+    //    dispatch_queue_t queue2 = dispatch_queue_create("com.520it.download", DISPATCH_QUEUE_SERIAL);
+    
+    /*
+     获取全局并发队列
+     第一个参数:队列的优先级  DISPATCH_QUEUE_PRIORITY_DEFAULT 0
+     第二个参数:永远传 0
+     */
+    //    dispatch_queue_t queue1 = dispatch_get_global_queue(0, 0);
+    
+    
+    //异步函数+并发队列  [self asyncCONCURRENT];
+    
+    //异步函数+串行队列  [self asyncSERIAL];
+    
+    //异步函数+并发队列  [self syncCONCURRENT];
+    
+    //同步函数+串行队列  [self syncSERIAL];
+    
+    //异步函数+主队列    [self asyncMain];
+    
+    //同步函数+主队列    [self syncMain];
+}
+
+/* 异步函数+并发队列: 开若干条线程,任务是并发执行的 */
+- (void)asyncCONCURRENT{
+    
+     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    /*
+     2.异步函数
+     第一个参数：队列
+     第二个参数：block,在里面封装任务
+     */
+    dispatch_async(queue, ^{
+        NSLog(@"--download1--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"--download2--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"--download3--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"--download4--%@",[NSThread currentThread]);
+    });
+}
+
+/* 异步函数+串行队列: 开一条线程,任务是串行执行的 */
+- (void)asyncSERIAL {
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.520it.download", DISPATCH_QUEUE_SERIAL);
+    /*
+     2.异步函数
+     第一个参数：队列
+     第二个参数：block,在里面封装任务
+     */
+    dispatch_async(queue, ^{
+        NSLog(@"--download1--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"--download2--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"--download3--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"--download4--%@",[NSThread currentThread]);
+    });
+    
+}
+
+/* 同步函数+并发队列: 不会开线程,任务是串行执行的 */
+- (void)syncCONCURRENT{
+ 
+     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    /*
+     2.同步函数
+     第一个参数：队列
+     第二个参数：block,在里面封装任务
+     */
+    dispatch_sync(queue, ^{
+        NSLog(@"--download1--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"--download2--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"--download3--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"--download4--%@",[NSThread currentThread]);
+    });
+
+}
+
+/* 同步函数+串行队列: 不会开线程,任务是串行执行的 */
+- (void)syncSERIAL{
+
+    dispatch_queue_t queue = dispatch_queue_create("com.520it.download", DISPATCH_QUEUE_SERIAL);
+    /*
+     2.同步函数
+     第一个参数：队列
+     第二个参数：block,在里面封装任务
+     */
+    dispatch_sync(queue, ^{
+        NSLog(@"--download1--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"--download2--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"--download3--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"--download4--%@",[NSThread currentThread]);
+    });
+
+}
+
+/* 异步函数+主队列: 不会开线程,任务是串行执行的 */
+- (void)asyncMain{
+    
+    // 1.获取主队列
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    
+    /*
+     2.异步函数
+     第一个参数：队列
+     第二个参数：block,在里面封装任务
+     */
+    dispatch_async(queue, ^{
+        NSLog(@"--download1--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"--download2--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"--download3--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        NSLog(@"--download4--%@",[NSThread currentThread]);
+    });
+    
+    
+}
+
+/* 同步函数+主队列: 会卡死 同步函数要立刻马上执行 需要放在子线程*/
+- (void)syncMain {
+    
+    // 1.获取主队列
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    
+    /*
+     2.异步函数
+     第一个参数：队列
+     第二个参数：block,在里面封装任务
+     */
+    dispatch_sync(queue, ^{
+        NSLog(@"--download1--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"--download2--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"--download3--%@",[NSThread currentThread]);
+    });
+    
+    dispatch_sync(queue, ^{
+        NSLog(@"--download4--%@",[NSThread currentThread]);
+    });
+    
+    
+}
+
+/* GCD 线程间通讯 */
+- (void)GCDcommunication {
+    
+    UIImageView *imageVc = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(_Mybutton.frame), CGRectGetMaxY(_Mybutton.frame)+20, 300, 300)];
+    imageVc.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _imageView = imageVc;
+    [self.view addSubview:imageVc];
+    
+    //1.开子线程 下载图片
+    //2.异步函数
+    //创建队列
+    dispatch_queue_t quque = dispatch_get_global_queue(0, 0);
+    
+    dispatch_async(quque, ^{
+        //加载图片地址
+        NSURL *url = [NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542799499895&di=b947a343c4f9241a8da68d56c3db49ec&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201501%2F11%2F20150111083239_dwyET.jpeg"];
+        //转换成Data
+        NSData *data = [NSData dataWithContentsOfURL:url];
+       
+        //把二进制数据转化生成图片
+        UIImage *image = [UIImage imageWithData:data];
+        NSLog(@"---%@",[NSThread currentThread]);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+            NSLog(@"+++%@",[NSThread currentThread]);
+        });
+        
+    });
+    
+}
+
+/* GCD 常用函数 */
+- (void)GCDCommonmethod {
+    
+    //栅栏函数 用来控制并发队列执行顺序 [self fenceMethod];
+    
+    //延迟执行 [self delay];
+    
+    //一次性代码 [self once];
+    
+    //快速迭代 [self apply];
+    
+    //文件剪切 [self moveFile];
+    
+    //队列组
+    [self group];
+}
+
+/* GCD 栅栏函数 */
+- (void)fenceMethod{
+    
+    //创建队列 (并发队列)
+    dispatch_queue_t queue = dispatch_queue_create("com.downloadqueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(queue, ^{
+        
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"%d--download1--%@",i,[NSThread currentThread]);
+        }
+        
+    });
+    
+    dispatch_async(queue, ^{
+        
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"%d--download2--%@",i,[NSThread currentThread]);
+        }
+        
+    });
+    
+    
+    dispatch_barrier_async(queue, ^{
+        NSLog(@"我是一个栅栏");
+    });
+    
+    dispatch_async(queue, ^{
+        
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"%d--download3--%@",i,[NSThread currentThread]);
+        }
+        
+    });
+    
+    dispatch_async(queue, ^{
+        
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"%d--download4--%@",i,[NSThread currentThread]);
+        }
+        
+    });
+    
+    
+}
+
+/* GCD 延迟执行 */
+- (void)delay {
+
+   NSLog(@"----");
+    
+    
+    //第一种方法 2.0s后调用    [self performSelector:@selector(rungcd) withObject:nil afterDelay:2.0];
+    
+   //第二种方法  [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(rungcd) userInfo:nil repeats:YES];
+
+   /*
+    第三种方法
+    第一个参数：延迟时间
+    第二个参数：执行事件
+    */
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"++++%@",[NSThread currentThread]);
+    });
+
+}
+- (void)rungcd {
+    NSLog(@"++++");
+}
+
+/* GCD 一次性代码 */
+- (void)once {
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSLog(@"+++++");
+    });
+    
+}
+
+/* GCD 快速迭代 */
+- (void)apply {
+    
+    /*
+     1.迭代
+    for (int i = 0; i < 10; i++) {
+        NSLog(@"%d---%@",i,[NSThread currentThread]);
+    }
+    */
+    
+    
+    dispatch_queue_t queue = dispatch_queue_create("com.downloadqueue", DISPATCH_QUEUE_CONCURRENT);
+    /*
+     快速迭代
+     第一个参数: 迭代的次数
+     第二个参数: 在那个队列中执行 并发队列
+     第三个参数: 执行的代码
+    */
+    dispatch_apply(10, queue, ^(size_t index) {
+         NSLog(@"%zd---%@",index,[NSThread currentThread]);
+    });
+    
+    
+}
+
+/* GCD 快速迭代的应用:文件剪切 */
+- (void)moveFile {
+    
+    //1.原路径 /Users/badwwy/Desktop/IOS Project/test/form
+    //2.目标地址   /Users/badwwy/Desktop/IOS Project/test/to
+    
+    
+    /*
+     1.用for 实现
+     NSString *form = @"/Users/badwwy/Desktop/IOS Project/test/form";
+     NSString *to   = @"/Users/badwwy/Desktop/IOS Project/test/to";
+     
+     //文件管理
+     NSFileManager *manager = [NSFileManager defaultManager];
+     NSArray *subpathsPath = [manager subpathsAtPath:form]; //获取文件夹下所有子路径
+     NSLog(@"%@",subpathsPath);
+     NSInteger count = [subpathsPath count];
+   
+      for(NSInteger i = 0; i< count; i++) {
+        //拼接文件全路径
+        NSString *fullPath = [form stringByAppendingPathComponent:subpathsPath[i]];
+        
+        //拼接目标文件夹全路径
+        NSString *fileName = [to stringByAppendingPathComponent:subpathsPath[i]];
+        
+        //剪切操作
+        //第一个参数: 原路径 第二个参数: 目标路径
+        [manager moveItemAtPath:fullPath toPath:fileName error:nil];
+        
+        NSLog(@"%@----%@",fullPath,fileName);
+    }
+    */
+    
+    //2.快速迭代
+    dispatch_queue_t queue = dispatch_queue_create("com.downloadqueue", DISPATCH_QUEUE_CONCURRENT);
+    NSString *form = @"/Users/badwwy/Desktop/IOS Project/test/form";
+    NSString *to   = @"/Users/badwwy/Desktop/IOS Project/test/to";
+    
+    //文件管理
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSArray *subpathsPath = [manager subpathsAtPath:form]; //获取文件夹下所有文件
+    
+  
+    NSInteger count = [subpathsPath count];
+
+    dispatch_apply(count, queue, ^(size_t index) {
+        //拼接文件全路径
+        NSString *fullPath = [form stringByAppendingPathComponent:subpathsPath[index]];
+
+        //拼接目标文件夹全路径
+        NSString *fileName = [to stringByAppendingPathComponent:subpathsPath[index]];
+
+        //剪切操作
+        //第一个参数: 原路径 第二个参数: 目标路径
+        [manager moveItemAtPath:fullPath toPath:fileName error:nil];
+
+        NSLog(@"%@",[NSThread currentThread]);
+    });
+    
+    
+    //补充内容:
+//    NSDirectoryEnumerator *enumer = [manager enumeratorAtPath:to];
+//    for (NSDirectoryEnumerator *en in enumer) {
+//        NSLog(@"%@",en);
+//    }
+    
+    
+}
+
+/* GCD 队列组  下载两张图片，合成一张图片*/
+- (void)group {
+    
+    UIImageView *imageVc = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(_Mybutton.frame), CGRectGetMaxY(_Mybutton.frame)+20, 300, 300)];
+    imageVc.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _imageView = imageVc;
+    [self.view addSubview:imageVc];
+    
+    
+    //创建队列组
+    dispatch_group_t group = dispatch_group_create();
+    
+    //下载图片1
+    dispatch_queue_t quque = dispatch_get_global_queue(0, 0);
+    
+    dispatch_group_async(group, quque, ^{
+        //加载图片地址
+        NSURL *url = [NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542799499895&di=b947a343c4f9241a8da68d56c3db49ec&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201501%2F11%2F20150111083239_dwyET.jpeg"];
+        //转换成Data
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        //把二进制数据转化生成图片
+        self.image1 = [UIImage imageWithData:data];
+        NSLog(@"---%@",[NSThread currentThread]);
+    });
+  
+    //下载图片2
+    dispatch_group_async(group, quque, ^{
+        //加载图片地址
+        NSURL *url = [NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542891369993&di=765e488640ebc144f7e020d9e2d6cd23&imgtype=jpg&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fbaike%2Fpic%2Fitem%2F03087bf40ad162d989e0c90e1ddfa9ec8a13cd92.jpg"];
+        //转换成Data
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        //把二进制数据转化生成图片
+        self.image2 = [UIImage imageWithData:data];
+        NSLog(@"---%@",[NSThread currentThread]);
+    });
+    
+    //合成图片
+    dispatch_group_notify(group, quque, ^{
+        
+        //合成图片 开启图形上下文
+        UIGraphicsBeginImageContext(CGSizeMake(300, 300));
+        
+        //图片1
+        [self.image1 drawInRect:CGRectMake(0, 0, 300, 150)];
+        
+        //图片2
+        [self.image2 drawInRect:CGRectMake(0, 150, 300, 150)];
+        
+        //根据图形上下文拿到图片
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        //关闭图形上下文
+        UIGraphicsEndImageContext();
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+            
+            NSLog(@"刷新UI--%@",[NSThread currentThread]);
+        });
+        
+        
+    });
+}
 
 @end
