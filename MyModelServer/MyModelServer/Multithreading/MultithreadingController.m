@@ -26,6 +26,7 @@
 @property (nonatomic , strong) UIImage *image1;
 @property (nonatomic , strong) UIImage *image2;
 
+@property (nonatomic , strong) NSOperationQueue *queue;
 
 
 @end
@@ -82,13 +83,13 @@
 - (void)BtnClick:(UIButton *)sender{
     
    
-//    [self pthread];
+//pthread     [self pthread];
     
-//    [self NsThread];
+//NSThread    [self NsThread];
     
+//GCD         [self GCDAction];
     
-      [self GCDAction];
-    
+       [self NSOperationAction];
     
 }
 
@@ -618,8 +619,7 @@ void *run (void *param) {
     
     //文件剪切 [self moveFile];
     
-    //队列组
-    [self group];
+    //队列组   [self group];
 }
 
 /* GCD 栅栏函数 */
@@ -769,7 +769,6 @@ void *run (void *param) {
     NSFileManager *manager = [NSFileManager defaultManager];
     NSArray *subpathsPath = [manager subpathsAtPath:form]; //获取文件夹下所有文件
     
-  
     NSInteger count = [subpathsPath count];
 
     dispatch_apply(count, queue, ^(size_t index) {
@@ -862,5 +861,417 @@ void *run (void *param) {
         
     });
 }
+
+
+#pragma mark NSOperation
+
+- (void)NSOperationAction {
+    
+   //NSOperation      基本使用 [self NSOperationBasicuse];
+    
+   //nsoperationqueue 基本操作 [self nsoperationqueueBasicuse];
+    
+   //nsoperation      其他用法 [self nsoperationqueueOther];
+    
+    //操作依赖和监听            [self nsoperationqueueClick];
+    
+    //线程间通信               [self nsoperationqueueCommunication];
+    
+    //两张图片合成一张          [self nsoperationqueueGroup];
+}
+
+/* NSOperation 的基本使用 */
+- (void)NSOperationBasicuse {
+    
+    /*
+     1.NSInvocationOperation 方法   主线程调用
+     第一个参数:目标对象
+     第二个参数:选择器，要调用的方法
+     第三个参数:方法要传递的参数
+     */
+//    [self NSInvocationOperation];
+
+
+    /*
+     2.NSBlockOperation 方法
+     block 完成操作
+     */
+//    [self NSBlockOperation];
+
+
+    /*
+     3.NSOperation 封装操作
+     */
+//    [self MyNSOperation];
+}
+
+/* NSInvocationOperation 方法创建线程 */
+- (void)NSInvocationOperation {
+    //    NSInvocationOperation *op = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(download) object:nil];
+    //    //启动
+    //    [op start];
+}
+
+/* NSBlockOperation 方法创建线程 */
+- (void)NSBlockOperation {
+        NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+            //主线程执行
+            NSLog(@"op1----%@",[NSThread currentThread]);
+        }];
+        [op1 start];
+    
+        NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+            NSLog(@"op2-----%@",[NSThread currentThread]);
+        }];
+    
+        //追加操作
+        [op2 addExecutionBlock:^{
+            //子线程执行
+             NSLog(@"op3-----%@",[NSThread currentThread]);
+        }];
+        [op2 addExecutionBlock:^{
+            NSLog(@"op4-----%@",[NSThread currentThread]);
+        }];
+        [op2 addExecutionBlock:^{
+            NSLog(@"op5-----%@",[NSThread currentThread]);
+        }];
+    
+        [op2 start];
+}
+
+/* MyNSOperation 自定义封装方法创建线程 */
+- (void)MyNSOperation {
+    MynsOperation *op1 = [[MynsOperation alloc]init];
+    [op1 start];
+    MynsOperation *op2 = [[MynsOperation alloc]init];
+    [op2 start];
+}
+
+- (void)download {
+    NSLog(@"%@",[NSThread currentThread]);
+}
+
+/* nsoperationqueue 的基本使用 */
+- (void)nsoperationqueueBasicuse {
+    
+    /*
+     并发队列:全局并发队列,自己创建(concurrent)
+     串行队列:主队列，自己创建（serial）
+    */
+    
+  /*  NSOperationQueue */
+    
+    /*
+     主队列: 凡是放在主队列的任务，都在主线程执行 [NSOperationQueue mainQueue]
+     非主队列: alloc,int ,同时具备了并发和串行的功能。默认是并发队列
+    */
+    
+    
+    
+    
+    //2.封装操作
+    
+    // 2.1 NSInvocationOperation [self NSInvocationOperations];
+    
+    
+    
+    // 2.2 NSBlockOperation      [self NSBlockOperations];
+
+    
+    // 2.3 自定义nsOperations     [self MynsOperations]
+
+    
+    /* 2.4 快捷方式 */
+    //1.创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    [queue addOperationWithBlock:^{
+        NSLog(@"download7---%@",[NSThread currentThread]);
+    }];
+   
+}
+
+/* 2.1 NSInvocationOperation + NSOperationQueue   */
+- (void)NSInvocationOperations {
+    //1.创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    
+    //2.封装操作
+    
+    /* 2.1 NSInvocationOperation  */
+    
+        NSInvocationOperation *op1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(Operationdownload1) object:nil];
+    
+        NSInvocationOperation *op2 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(Operationdownload2) object:nil];
+    
+        NSInvocationOperation *op3 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(Operationdownload3) object:nil];
+    
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:op3];
+}
+
+/* 2.2 NSBlockOperation  + NSOperationQueue   */
+- (void)NSBlockOperations {
+    
+    //1.创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    
+    //2.封装操作
+    
+        NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+            NSLog(@"download1---%@",[NSThread currentThread]);
+        }];
+    
+        NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+            NSLog(@"download2---%@",[NSThread currentThread]);
+        }];
+    
+        NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+            NSLog(@"download3---%@",[NSThread currentThread]);
+        }];
+    
+        [op3 addExecutionBlock:^{
+             NSLog(@"download4---%@",[NSThread currentThread]);
+        }];
+        [op3 addExecutionBlock:^{
+            NSLog(@"download5---%@",[NSThread currentThread]);
+        }];
+        [op3 addExecutionBlock:^{
+            NSLog(@"download6---%@",[NSThread currentThread]);
+        }];
+    
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:op3];
+}
+
+/* 2.3 自定义nsOperations  + NSOperationQueue   */
+- (void)MynsOperations {
+    
+    //1.创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    
+     MynsOperation *op1 = [[MynsOperation alloc]init];
+     MynsOperation *op2 = [[MynsOperation alloc]init];
+    
+     [queue addOperation:op1];
+     [queue addOperation:op2];
+}
+
+- (void)Operationdownload1 {
+    NSLog(@"download1---%@",[NSThread currentThread]);
+}
+- (void)Operationdownload2 {
+    NSLog(@"download2---%@",[NSThread currentThread]);
+}
+- (void)Operationdownload3 {
+    NSLog(@"download3---%@",[NSThread currentThread]);
+}
+
+/* nsoperation其他用法 */
+- (void)nsoperationqueueOther {
+    
+    //最大并发数 [self maxConcurrentOperationCount];
+    
+    //暂停队列 恢复队列 self.queue.suspended = YES;
+    
+    //取消队列里所有运行方法,不可逆 [self.queue cancelAllOperations];
+    
+    //自定义操作，是否可以暂停
+    [self nsOperations];
+    
+}
+
+/* 最大并发数用法 */
+- (void)maxConcurrentOperationCount {
+    //1.创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    _queue = queue;
+    //2.封装操作
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:1.0];
+        NSLog(@"1---%@",[NSThread currentThread]);
+    }];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:1.0];
+        NSLog(@"2---%@",[NSThread currentThread]);
+    }];
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:1.0];
+        NSLog(@"3---%@",[NSThread currentThread]);
+    }];
+    NSBlockOperation *op4 = [NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:1.0];
+        NSLog(@"4---%@",[NSThread currentThread]);
+    }];
+    NSBlockOperation *op5 = [NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:1.0];
+        NSLog(@"5---%@",[NSThread currentThread]);
+    }];
+    
+    //最大并发数 默认是并发队列。 如果大于1 就是并发队列。等于1 就是串行队列
+    queue.maxConcurrentOperationCount = 1;
+    
+    //3.添加队列
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:op3];
+    [queue addOperation:op4];
+    [queue addOperation:op5];
+}
+
+/* 自定义操作 */
+- (void)nsOperations {
+    //1.创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    MynsOperation *op1 = [[MynsOperation alloc]init];
+    [queue addOperation:op1];
+    self.queue = queue;
+}
+
+/* 操作依赖和监听 */
+- (void)nsoperationqueueClick {
+    
+    //1. 创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    NSOperationQueue *queue1 = [[NSOperationQueue alloc]init];
+    
+    //
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"1---%@",[NSThread currentThread]);
+    }];
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"2---%@",[NSThread currentThread]);
+    }];
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"3---%@",[NSThread currentThread]);
+    }];
+    NSBlockOperation *op4 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"4---%@",[NSThread currentThread]);
+    }];
+    NSBlockOperation *op5 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"5---%@",[NSThread currentThread]);
+    }];
+    
+    //监听操作
+    op4.completionBlock = ^{
+        NSLog(@"op4已经完成了");
+    };
+
+    //操作依赖 操作1 依赖 操作5 注意死循环
+    [op1 addDependency:op5];
+    [op1 addDependency:op4];
+    
+      [queue addOperation:op1];
+      [queue addOperation:op2];
+      [queue addOperation:op3];
+      [queue addOperation:op4];
+      [queue1 addOperation:op5];
+    
+}
+
+/* nsoperation线程通信 */
+- (void)nsoperationqueueCommunication {
+    
+    UIImageView *imageVc = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(_Mybutton.frame), CGRectGetMaxY(_Mybutton.frame)+20, 300, 300)];
+    imageVc.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _imageView = imageVc;
+    [self.view addSubview:imageVc];
+    
+    //开启队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    
+    //下载图片
+    [queue addOperationWithBlock:^{
+        //加载图片地址
+        NSURL *url = [NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542799499895&di=b947a343c4f9241a8da68d56c3db49ec&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201501%2F11%2F20150111083239_dwyET.jpeg"];
+        //转换成Data
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        //把二进制数据转化生成图片
+        UIImage *image = [UIImage imageWithData:data];
+        NSLog(@"---%@",[NSThread currentThread]);
+        
+        //回到主线程
+        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
+            self.imageView.image = image;
+             NSLog(@"+++%@",[NSThread currentThread]);
+            
+        }];
+    }];
+    
+}
+
+- (void)nsoperationqueueGroup {
+    
+    UIImageView *imageVc = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(_Mybutton.frame), CGRectGetMaxY(_Mybutton.frame)+20, 300, 300)];
+    imageVc.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    _imageView = imageVc;
+    [self.view addSubview:imageVc];
+    
+    //开启队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc]init];
+    
+    //下载图片1
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        //加载图片地址
+        NSURL *url = [NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542799499895&di=b947a343c4f9241a8da68d56c3db49ec&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201501%2F11%2F20150111083239_dwyET.jpeg"];
+        //转换成Data
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        //把二进制数据转化生成图片
+        UIImage *image = [UIImage imageWithData:data];
+        self.image1 = image;
+        NSLog(@"---%@",[NSThread currentThread]);
+        
+    }];
+    
+    //下载图片2
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        //加载图片地址
+        NSURL *url = [NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542891369993&di=765e488640ebc144f7e020d9e2d6cd23&imgtype=jpg&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fbaike%2Fpic%2Fitem%2F03087bf40ad162d989e0c90e1ddfa9ec8a13cd92.jpg"];
+        //转换成Data
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        //把二进制数据转化生成图片
+        UIImage *image = [UIImage imageWithData:data];
+        self.image2 = image;
+        NSLog(@"---%@",[NSThread currentThread]);
+        
+    }];
+
+
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        //合成图片 开启图形上下文
+        UIGraphicsBeginImageContext(CGSizeMake(300, 300));
+        
+        //图片1
+        [self.image1 drawInRect:CGRectMake(0, 0, 300, 150)];
+        
+        //图片2
+        [self.image2 drawInRect:CGRectMake(0, 150, 300, 150)];
+        
+        //根据图形上下文拿到图片
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        
+        //关闭图形上下文
+        UIGraphicsEndImageContext();
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imageView.image = image;
+            
+            NSLog(@"刷新UI--%@",[NSThread currentThread]);
+        });
+    }];
+    
+    [op3 addDependency:op1];
+    [op3 addDependency:op2];
+    
+    [queue addOperation:op1];
+    [queue addOperation:op2];
+    [queue addOperation:op3];
+}
+
 
 @end

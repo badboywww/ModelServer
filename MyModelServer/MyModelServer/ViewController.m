@@ -58,6 +58,7 @@
                                             @"CALayer",
                                             @"微博",
                                             @"多线程",
+                                            @"单例模式",
                                             nil];
     [_dataArray addObjectsFromArray:arr];
     
@@ -135,6 +136,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if(indexPath.row == 9){
         MultithreadingController *vc = [MultithreadingController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 10){
+        singletonModeController *vc = [singletonModeController new];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

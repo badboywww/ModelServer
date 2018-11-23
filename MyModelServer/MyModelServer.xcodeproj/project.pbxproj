@@ -45,6 +45,9 @@
 		57600AC021A534670034D4EB /* MultithreadingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57600ABF21A534670034D4EB /* MultithreadingController.m */; };
 		57600AC321A541FB0034D4EB /* myThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 57600AC221A541FB0034D4EB /* myThread.m */; };
 		57600B1521A6A8D50034D4EB /* GCDPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 57600B1421A6A8D50034D4EB /* GCDPerson.m */; };
+		57600B1821A7A89E0034D4EB /* singletonModeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57600B1721A7A89E0034D4EB /* singletonModeController.m */; };
+		57600B1B21A7AA4B0034D4EB /* toolsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57600B1A21A7AA4B0034D4EB /* toolsModel.m */; };
+		57600B2421A7DEB00034D4EB /* MynsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57600B2321A7DEB00034D4EB /* MynsOperation.m */; };
 		578F1E2A21816A60002D9BC1 /* UIColor+MyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */; };
 		57937107219134FC0001CEFD /* UIView+CALayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57937106219134FC0001CEFD /* UIView+CALayer.m */; };
 		5793710A2191663F0001CEFD /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 579371092191663F0001CEFD /* WheelView.m */; };
@@ -142,6 +145,13 @@
 		57600AC221A541FB0034D4EB /* myThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myThread.m; sourceTree = "<group>"; };
 		57600B1321A6A8D50034D4EB /* GCDPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDPerson.h; sourceTree = "<group>"; };
 		57600B1421A6A8D50034D4EB /* GCDPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDPerson.m; sourceTree = "<group>"; };
+		57600B1621A7A89E0034D4EB /* singletonModeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = singletonModeController.h; sourceTree = "<group>"; };
+		57600B1721A7A89E0034D4EB /* singletonModeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = singletonModeController.m; sourceTree = "<group>"; };
+		57600B1921A7AA4B0034D4EB /* toolsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = toolsModel.h; sourceTree = "<group>"; };
+		57600B1A21A7AA4B0034D4EB /* toolsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = toolsModel.m; sourceTree = "<group>"; };
+		57600B2121A7D3EE0034D4EB /* single.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = single.h; sourceTree = "<group>"; };
+		57600B2221A7DEB00034D4EB /* MynsOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MynsOperation.h; sourceTree = "<group>"; };
+		57600B2321A7DEB00034D4EB /* MynsOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MynsOperation.m; sourceTree = "<group>"; };
 		578F1E2821816A60002D9BC1 /* UIColor+MyColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColor.h"; sourceTree = "<group>"; };
 		578F1E2921816A60002D9BC1 /* UIColor+MyColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColor.m"; sourceTree = "<group>"; };
 		57937105219134FC0001CEFD /* UIView+CALayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CALayer.h"; sourceTree = "<group>"; };
@@ -299,6 +309,7 @@
 		5702EBEE2175C35700104820 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				57600B2121A7D3EE0034D4EB /* single.h */,
 				5702EBF32175C35700104820 /* HRRequestTools.h */,
 				5702EC272175C38C00104820 /* HRRequestTools.m */,
 				5702EBF02175C35700104820 /* SPUncaughtExceptionHandler */,
@@ -430,6 +441,12 @@
 				57600AC221A541FB0034D4EB /* myThread.m */,
 				57600B1321A6A8D50034D4EB /* GCDPerson.h */,
 				57600B1421A6A8D50034D4EB /* GCDPerson.m */,
+				57600B2221A7DEB00034D4EB /* MynsOperation.h */,
+				57600B2321A7DEB00034D4EB /* MynsOperation.m */,
+				57600B1621A7A89E0034D4EB /* singletonModeController.h */,
+				57600B1721A7A89E0034D4EB /* singletonModeController.m */,
+				57600B1921A7AA4B0034D4EB /* toolsModel.h */,
+				57600B1A21A7AA4B0034D4EB /* toolsModel.m */,
 			);
 			path = Multithreading;
 			sourceTree = "<group>";
@@ -590,6 +607,7 @@
 			files = (
 				5702EC1C2175C35700104820 /* PhotoSingle.m in Sources */,
 				5793711821940F3C0001CEFD /* MusicalvibrationVc.m in Sources */,
+				57600B2421A7DEB00034D4EB /* MynsOperation.m in Sources */,
 				5702EC34217DF14200104820 /* CALayerViewController.m in Sources */,
 				5702EC152175C35700104820 /* MyImgeView.m in Sources */,
 				5702EBBF2175BED100104820 /* ViewController.m in Sources */,
@@ -603,9 +621,11 @@
 				5702EBCA2175BED200104820 /* main.m in Sources */,
 				5793712F219575880001CEFD /* WeiboAnimationViewController.m in Sources */,
 				5793710A2191663F0001CEFD /* WheelView.m in Sources */,
+				57600B1B21A7AA4B0034D4EB /* toolsModel.m in Sources */,
 				5702EC1D2175C35700104820 /* PhotoViewController.m in Sources */,
 				5702EBBC2175BED100104820 /* AppDelegate.m in Sources */,
 				5702EC1B2175C35700104820 /* NSString+Extension.m in Sources */,
+				57600B1821A7A89E0034D4EB /* singletonModeController.m in Sources */,
 				5702EC182175C35700104820 /* SPUncaughtExceptionHandler.m in Sources */,
 				5702EC37217DF26400104820 /* myCALayer.m in Sources */,
 				5702EC112175C35700104820 /* DrawView.m in Sources */,
