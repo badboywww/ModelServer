@@ -59,6 +59,7 @@
                                             @"微博",
                                             @"多线程",
                                             @"单例模式",
+                                            @"多图下载",
                                             nil];
     [_dataArray addObjectsFromArray:arr];
     
@@ -139,6 +140,9 @@
         [self.navigationController pushViewController:vc animated:YES];
     }else if(indexPath.row == 10){
         singletonModeController *vc = [singletonModeController new];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 11){
+        multiImageController *vc = [[multiImageController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     

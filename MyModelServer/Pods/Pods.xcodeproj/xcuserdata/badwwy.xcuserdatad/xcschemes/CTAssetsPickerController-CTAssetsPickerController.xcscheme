@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "23ED2346BD895D543EE368D15C7D328F"
+               BlueprintIdentifier = "7B3554309F2358358B3DC086FDE45318"
                BuildableName = "CTAssetsPickerController.bundle"
                BlueprintName = "CTAssetsPickerController-CTAssetsPickerController"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "23ED2346BD895D543EE368D15C7D328F"
+            BlueprintIdentifier = "7B3554309F2358358B3DC086FDE45318"
             BuildableName = "CTAssetsPickerController.bundle"
             BlueprintName = "CTAssetsPickerController-CTAssetsPickerController"
             ReferencedContainer = "container:Pods.xcodeproj">

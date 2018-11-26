@@ -17,6 +17,7 @@
 #import "Weibo/WeiboAnimationViewController.h"
 #import "Multithreading/MultithreadingController.h"
 #import "singletonModeController.h"
+#import "multiImageController.h"
 @interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic , strong) UITableView *tableVc;

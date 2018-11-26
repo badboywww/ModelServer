@@ -25,6 +25,7 @@
 #import <LBPhotoBrowserManager.h>
 #import <LBPhotoBrowserView.h>
 #import <LBPhotoBrowserConst.h>
+#import <UIImageView+WebCache.h>
 
 #pragma mark 自己的工具类
 #import "UIView+NTES.h"
