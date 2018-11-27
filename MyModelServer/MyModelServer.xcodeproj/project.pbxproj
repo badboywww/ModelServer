@@ -69,6 +69,8 @@
 		57DE5C7421AA8A8300D0E0B8 /* multiImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C7321AA8A8300D0E0B8 /* multiImageController.m */; };
 		57DE5C7921AAA7AA00D0E0B8 /* multilImagemodel.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C7821AAA7AA00D0E0B8 /* multilImagemodel.m */; };
 		57DE5C7D21AAAD7200D0E0B8 /* icon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57DE5C7C21AAAD7200D0E0B8 /* icon.plist */; };
+		57DE5C8121AD155A00D0E0B8 /* myRunLoopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C8021AD155A00D0E0B8 /* myRunLoopController.m */; };
+		57DE5C8421AD3F8F00D0E0B8 /* runLoopThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C8321AD3F8F00D0E0B8 /* runLoopThread.m */; };
 		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
@@ -192,6 +194,10 @@
 		57DE5C7721AAA7AA00D0E0B8 /* multilImagemodel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multilImagemodel.h; sourceTree = "<group>"; };
 		57DE5C7821AAA7AA00D0E0B8 /* multilImagemodel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = multilImagemodel.m; sourceTree = "<group>"; };
 		57DE5C7C21AAAD7200D0E0B8 /* icon.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = icon.plist; sourceTree = "<group>"; };
+		57DE5C7F21AD155A00D0E0B8 /* myRunLoopController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myRunLoopController.h; sourceTree = "<group>"; };
+		57DE5C8021AD155A00D0E0B8 /* myRunLoopController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myRunLoopController.m; sourceTree = "<group>"; };
+		57DE5C8221AD3F8F00D0E0B8 /* runLoopThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = runLoopThread.h; sourceTree = "<group>"; };
+		57DE5C8321AD3F8F00D0E0B8 /* runLoopThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = runLoopThread.m; sourceTree = "<group>"; };
 		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
 		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
 		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +245,7 @@
 		5702EBB92175BED100104820 /* MyModelServer */ = {
 			isa = PBXGroup;
 			children = (
+				57DE5C7E21AD153700D0E0B8 /* RunLoop */,
 				57DE5C7121AA8A4800D0E0B8 /* MultiImageDownload */,
 				57600ABD21A532A70034D4EB /* Multithreading */,
 				5793712C219573D20001CEFD /* Weibo */,
@@ -497,6 +504,17 @@
 			path = MultiImageDownload;
 			sourceTree = "<group>";
 		};
+		57DE5C7E21AD153700D0E0B8 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				57DE5C7F21AD155A00D0E0B8 /* myRunLoopController.h */,
+				57DE5C8021AD155A00D0E0B8 /* myRunLoopController.m */,
+				57DE5C8221AD3F8F00D0E0B8 /* runLoopThread.h */,
+				57DE5C8321AD3F8F00D0E0B8 /* runLoopThread.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
 		D3315D2708C5C8DD4E07E360 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +652,7 @@
 				5702EC152175C35700104820 /* MyImgeView.m in Sources */,
 				5702EBBF2175BED100104820 /* ViewController.m in Sources */,
 				57937107219134FC0001CEFD /* UIView+CALayer.m in Sources */,
+				57DE5C8121AD155A00D0E0B8 /* myRunLoopController.m in Sources */,
 				5702EC162175C35700104820 /* pieView.m in Sources */,
 				5793711B219412270001CEFD /* ReflectionVc.m in Sources */,
 				5702EC282175C38C00104820 /* dataStorageViewController.m in Sources */,
@@ -659,6 +678,7 @@
 				5702EC2A2175C38D00104820 /* HRRequestTools.m in Sources */,
 				5702EC202175C35700104820 /* PhotoCollectionViewCell.m in Sources */,
 				5793712B21955B590001CEFD /* BageValue.m in Sources */,
+				57DE5C8421AD3F8F00D0E0B8 /* runLoopThread.m in Sources */,
 				5702EC2F2178B41C00104820 /* UIView+HRFrame.m in Sources */,
 				57DE5C7421AA8A8300D0E0B8 /* multiImageController.m in Sources */,
 				5702EC212175C35700104820 /* GetPhotoViewController.m in Sources */,

@@ -18,6 +18,7 @@
 #import "Multithreading/MultithreadingController.h"
 #import "singletonModeController.h"
 #import "multiImageController.h"
+#import "myRunLoopController.h"
 @interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic , strong) UITableView *tableVc;

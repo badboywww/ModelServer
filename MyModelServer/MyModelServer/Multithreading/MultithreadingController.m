@@ -544,7 +544,7 @@ void *run (void *param) {
     
 }
 
-/* 同步函数+主队列: 会卡死 同步函数要立刻马上执行 需要放在子线程*/
+/* 同步函数+主队列: 会卡死 同步函数要立刻马上执行 需要放在子线程 */
 - (void)syncMain {
     
     // 1.获取主队列
@@ -861,6 +861,9 @@ void *run (void *param) {
         
     });
 }
+
+
+
 
 
 #pragma mark NSOperation

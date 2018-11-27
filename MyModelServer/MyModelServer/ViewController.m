@@ -60,6 +60,7 @@
                                             @"多线程",
                                             @"单例模式",
                                             @"多图下载",
+                                            @"RunLoop",
                                             nil];
     [_dataArray addObjectsFromArray:arr];
     
@@ -136,13 +137,20 @@
         WeiboAnimationViewController *vc = [WeiboAnimationViewController new];
         [self.navigationController pushViewController:vc animated:YES];
     }else if(indexPath.row == 9){
+        //多线程
         MultithreadingController *vc = [MultithreadingController new];
         [self.navigationController pushViewController:vc animated:YES];
     }else if(indexPath.row == 10){
+        //单例
         singletonModeController *vc = [singletonModeController new];
         [self.navigationController pushViewController:vc animated:YES];
     }else if(indexPath.row == 11){
+        //多图下载
         multiImageController *vc = [[multiImageController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 12){
+        //runloop
+        myRunLoopController *vc = [[myRunLoopController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     
