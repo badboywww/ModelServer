@@ -19,6 +19,7 @@
 #import "singletonModeController.h"
 #import "multiImageController.h"
 #import "myRunLoopController.h"
+#import "internetController.h"
 @interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic , strong) UITableView *tableVc;

@@ -19,6 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
+    NSSetUncaughtExceptionHandler(&handler);
+    
     self.window= [[UIWindow alloc]
                   initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -31,7 +34,17 @@
     
     
     
+    
+    
     return YES;
+}
+
+
+void  handler(NSException *exception) {
+    
+    
+    NSLog(@"拼接异常信息,保存本地沙盒中");
+    
 }
 
 

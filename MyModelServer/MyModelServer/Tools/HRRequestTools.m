@@ -10,20 +10,7 @@
 
 @implementation HRRequestTools
 
-//+ (id)shareInstance{
-//    static HRRequestTools *tools = nil;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken,^{
-//        if (tools == nil) {
-//            tools = [[HRRequestTools alloc]init];
-//        }
-//    });
-//    return tools;
-//}
 
-//+(void)autoLogin:(NSDictionary *)dic Success:(SuccessBlock)success failed:(FailedBlock)faild{
-//    AFHTTPSessionManager *
-//}
 
 
 #pragma mark 普通：
@@ -45,7 +32,6 @@
     AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
    manager.requestSerializer=[AFJSONRequestSerializer serializer];
    manager.responseSerializer=[AFJSONResponseSerializer serializer];
-//   manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     manager.securityPolicy=[AFSecurityPolicy defaultPolicy];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/html",@"text/plain",nil];
@@ -119,89 +105,6 @@
     }
     
 }
-
-//+(void)BaseWithURL:(NSString *)url Opt:(NSString *)shoveOpt userId:(NSString *)userId infoDict:(NSDictionary *)infoDict Success:(SuccessBlock)success Failed:(FailedBlock)failed{
-//    
-//    //准备数据
-//        NSString *infoStr = [infoDict JSONString];
-//        NSString *currentDate = [InterfaceHelper getCurrentDateString];
-//        NSString *crc = [InterfaceHelper getCrcWithInfo:infoStr UID:userId == nil ? @"-1" : userId TimeStamp:currentDate];
-//        NSString *auth = [InterfaceHelper getAuthStrWithCrc:crc UID:userId == nil ? @"-1" : userId TimeStamp:currentDate];
-//        NSLog(@"infoStr == %@",infoStr);
-//    
-//    //判断网络：
-//    Reachability *reach=[Reachability reachabilityForInternetConnection];
-//    NetworkStatus status=[reach currentReachabilityStatus];
-//    
-//    if (status == NotReachable) {
-//        //        [MBProgressHUD showToastAndMessage:@"没有网络，请检查您的网络" places:0 toView:nil];
-//        return;
-//    }
-//    
-//    AFSecurityPolicy *securityPolicy = [[AFSecurityPolicy alloc] init];
-//    [securityPolicy setAllowInvalidCertificates:YES];
-//    
-//    //请求：
-//    AFHTTPSessionManager *manager=[AFHTTPSessionManager manager];
-//    manager.requestSerializer=[AFJSONRequestSerializer serializer];
-//    manager.responseSerializer=[AFJSONResponseSerializer serializer];
-//
-//    
-//    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-//    [dict setObject:shoveOpt == nil ? @"" : shoveOpt forKey:kOpt];
-//    [dict setObject:auth == nil ? @"" : auth forKey:kAuth];
-//    [dict setObject:infoStr == nil ? @"" : infoStr forKey:kInfo];
-//    
-//    NSString *shoveBaseUrl =[NSString stringWithFormat:@"%@/",[ShoveGeneralRestGateway buildUrl:url key:kAppHttpKey parameters:dict]] ;
-//    
-//    manager.securityPolicy=[AFSecurityPolicy defaultPolicy];
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/html",@"text/plain",nil];
-//    manager.securityPolicy.allowInvalidCertificates=YES;
-//    manager.securityPolicy.validatesDomainName=NO;
-//    
-//    //超时时间：
-//    manager.requestSerializer.timeoutInterval=60;
-//    
-//    
-//  //  if ([method isEqualToString:@"get"]||[method isEqualToString:@"GET"]) {
-//        
-//        [manager GET:shoveBaseUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-//            
-//        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//            success(responseObject);
-//        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//            
-//            NSHTTPURLResponse *response = (NSHTTPURLResponse*)task.response;
-//            //通讯协议状态码
-//            NSLog(@"error==%@",error.localizedFailureReason);
-//            NSInteger statusCode = response.statusCode;
-//            NSLog(@"statusCode=%ld",(long)statusCode);
-//            failed([NSString stringWithFormat:@"%ld",(long)statusCode]);
-//        }];
-//        
-////    }else if([method isEqualToString:@"post"]||[method isEqualToString:@"POST"]){
-////        [manager POST:url parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-////            
-////            NSLog(@"upload=%@",uploadProgress);
-////        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-////            
-////            success(responseObject);
-////        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-////            //            [MBProgressHUD hideHUDForView:nil];
-////            
-////            NSLog(@"error==%@",error.localizedFailureReason);
-////            
-////            NSHTTPURLResponse *response = (NSHTTPURLResponse*)task.response;
-////            //通讯协议状态码
-////            NSInteger statusCode = response.statusCode;
-////            NSLog(@"error==%@",error.localizedFailureReason);
-////            failed([NSString stringWithFormat:@"%ld",(long)statusCode]);
-////            
-////        }];
-////    }
-//    
-//    
-//}
 
 
 +(void)HttpWithURL:(NSString *)url Method:(NSString *)method Params:(id)params  Success:(SuccessBlock)success Failed:(FailedBlock)failed{
@@ -344,8 +247,6 @@
             failed([NSString stringWithFormat:@"%ld",(long)statusCode]);
             
         }];
-        
-        
         
     }
 }
@@ -535,6 +436,7 @@
         NSInteger statusCode = response.statusCode;
         faild([NSString stringWithFormat:@"%ld",(long)statusCode]);
     }];
+    
 }
 
 
@@ -667,6 +569,34 @@
 }
 
 
+
++ (void)RequestDownloadFileUrl:(NSString *)url ViewController:(UIViewController *)view{
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    NSURLRequest *requset = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+   
+    
+    
+  NSURLSessionDownloadTask *downloadTask =  [manager downloadTaskWithRequest:requset progress:nil destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        
+        NSLog(@"targetPath:%@",targetPath);
+      NSURL *url = [NSURL fileURLWithPath:[[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)lastObject]stringByAppendingPathComponent:response.suggestedFilename]];
+        
+        return url;
+        
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+       
+        
+        NSLog(@"filePath%@",filePath);
+        
+    }];
+    
+    
+    [downloadTask resume];
+    
+}
 
 
 

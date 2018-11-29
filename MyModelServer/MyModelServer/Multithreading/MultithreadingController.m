@@ -83,13 +83,15 @@
 - (void)BtnClick:(UIButton *)sender{
     
    
-//pthread     [self pthread];
+//pthread       [self pthread];
     
-//NSThread    [self NsThread];
+//NSThread      [self NsThread];
     
-//GCD         [self GCDAction];
+//GCD           [self GCDAction];
     
-       [self NSOperationAction];
+ //NSOperation  [self NSOperationAction];
+    
+    [self NSInvocation];
     
 }
 
@@ -863,9 +865,6 @@ void *run (void *param) {
 }
 
 
-
-
-
 #pragma mark NSOperation
 
 - (void)NSOperationAction {
@@ -1276,5 +1275,62 @@ void *run (void *param) {
     [queue addOperation:op3];
 }
 
+
+#pragma mark 关于 NSInvocation
+
+- (void)NSInvocation {
+ 
+//    NSInvocationOperation *op1 = [[NSInvocationOperation alloc]initWithInvocation:[self invocation]];
+    
+    [self invocation];
+    
+}
+
+- (void)invocation {
+    //1.创建签名:方法名称|参数|返回|谁拥有,和方法调用没有关系
+    NSMethodSignature *signature = [MultithreadingController instanceMethodSignatureForSelector:@selector(callWithName:andContext:withStatus:)];
+    
+    //2.创建NSInvocation
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    invocation.target = self;
+    invocation.selector = @selector(callWithName:andContext:withStatus:);
+    
+    NSString *number = @"张三";
+    NSString *context = @"明天周五";
+    NSString *status = @"刚回家的";
+    
+    //0,1 已经被占用了 从 2 开始
+    [invocation setArgument:&number atIndex:2];
+    [invocation setArgument:&context atIndex:3];
+    [invocation setArgument:&status atIndex:4];
+    
+    [invocation invoke];
+    
+}
+
+
+- (void)call{
+    
+    NSLog(@"Call---");
+    
+}
+
+- (void)callWithName:(NSString *)name {
+    
+     NSLog(@"Call给%@",name);
+    
+}
+
+- (void)callWithName:(NSString *)name andContext:(NSString *)context{
+    
+    NSLog(@"Call给%@说:%@",name,context);
+    
+}
+
+- (void)callWithName:(NSString *)name andContext:(NSString *)context withStatus:(NSString *)status{
+    
+    NSLog(@"%@Call给%@说:%@",status,name,context);
+    
+}
 
 @end

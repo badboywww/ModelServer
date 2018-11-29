@@ -71,6 +71,9 @@
 		57DE5C7D21AAAD7200D0E0B8 /* icon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57DE5C7C21AAAD7200D0E0B8 /* icon.plist */; };
 		57DE5C8121AD155A00D0E0B8 /* myRunLoopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C8021AD155A00D0E0B8 /* myRunLoopController.m */; };
 		57DE5C8421AD3F8F00D0E0B8 /* runLoopThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C8321AD3F8F00D0E0B8 /* runLoopThread.m */; };
+		57DE5C8821AD708400D0E0B8 /* internetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C8721AD708400D0E0B8 /* internetController.m */; };
+		57DE5C8B21AD81C200D0E0B8 /* myXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C8A21AD81C200D0E0B8 /* myXMLParser.m */; };
+		57DE5C8F21AFC8B000D0E0B8 /* httpwebview.html in Resources */ = {isa = PBXBuildFile; fileRef = 57DE5C8E21AFC8B000D0E0B8 /* httpwebview.html */; };
 		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +201,11 @@
 		57DE5C8021AD155A00D0E0B8 /* myRunLoopController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myRunLoopController.m; sourceTree = "<group>"; };
 		57DE5C8221AD3F8F00D0E0B8 /* runLoopThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = runLoopThread.h; sourceTree = "<group>"; };
 		57DE5C8321AD3F8F00D0E0B8 /* runLoopThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = runLoopThread.m; sourceTree = "<group>"; };
+		57DE5C8621AD708400D0E0B8 /* internetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = internetController.h; sourceTree = "<group>"; };
+		57DE5C8721AD708400D0E0B8 /* internetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = internetController.m; sourceTree = "<group>"; };
+		57DE5C8921AD81C200D0E0B8 /* myXMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myXMLParser.h; sourceTree = "<group>"; };
+		57DE5C8A21AD81C200D0E0B8 /* myXMLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myXMLParser.m; sourceTree = "<group>"; };
+		57DE5C8E21AFC8B000D0E0B8 /* httpwebview.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = httpwebview.html; sourceTree = "<group>"; };
 		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
 		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
 		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +253,8 @@
 		5702EBB92175BED100104820 /* MyModelServer */ = {
 			isa = PBXGroup;
 			children = (
+				5702EBEE2175C35700104820 /* Tools */,
+				57DE5C8521AD704000D0E0B8 /* Inter */,
 				57DE5C7E21AD153700D0E0B8 /* RunLoop */,
 				57DE5C7121AA8A4800D0E0B8 /* MultiImageDownload */,
 				57600ABD21A532A70034D4EB /* Multithreading */,
@@ -252,7 +262,6 @@
 				5702EC31217DF12800104820 /* CALayer */,
 				5702EC222175C38C00104820 /* dataGroup */,
 				5702EBDF2175C35700104820 /* Quartz2D */,
-				5702EBEE2175C35700104820 /* Tools */,
 				5702EBD32175C35700104820 /* viewGroup */,
 				5702EBDC2175C35700104820 /* WMT */,
 				5702EBD02175BF7E00104820 /* Other */,
@@ -331,6 +340,8 @@
 				5702EBF02175C35700104820 /* SPUncaughtExceptionHandler */,
 				5702EBF42175C35700104820 /* MyTools */,
 				5702EBFB2175C35700104820 /* photos */,
+				57DE5C8921AD81C200D0E0B8 /* myXMLParser.h */,
+				57DE5C8A21AD81C200D0E0B8 /* myXMLParser.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -515,6 +526,16 @@
 			path = RunLoop;
 			sourceTree = "<group>";
 		};
+		57DE5C8521AD704000D0E0B8 /* Inter */ = {
+			isa = PBXGroup;
+			children = (
+				57DE5C8621AD708400D0E0B8 /* internetController.h */,
+				57DE5C8721AD708400D0E0B8 /* internetController.m */,
+				57DE5C8E21AFC8B000D0E0B8 /* httpwebview.html */,
+			);
+			path = Inter;
+			sourceTree = "<group>";
+		};
 		D3315D2708C5C8DD4E07E360 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +609,7 @@
 				57DE5C7D21AAAD7200D0E0B8 /* icon.plist in Resources */,
 				5793710C2191668E0001CEFD /* WheelView.xib in Resources */,
 				57937139219579FB0001CEFD /* ComposeVC.xib in Resources */,
+				57DE5C8F21AFC8B000D0E0B8 /* httpwebview.html in Resources */,
 				5702EBC22175BED100104820 /* Main.storyboard in Resources */,
 				57937128219559F70001CEFD /* QQButton.xib in Resources */,
 			);
@@ -653,6 +675,7 @@
 				5702EBBF2175BED100104820 /* ViewController.m in Sources */,
 				57937107219134FC0001CEFD /* UIView+CALayer.m in Sources */,
 				57DE5C8121AD155A00D0E0B8 /* myRunLoopController.m in Sources */,
+				57DE5C8B21AD81C200D0E0B8 /* myXMLParser.m in Sources */,
 				5702EC162175C35700104820 /* pieView.m in Sources */,
 				5793711B219412270001CEFD /* ReflectionVc.m in Sources */,
 				5702EC282175C38C00104820 /* dataStorageViewController.m in Sources */,
@@ -701,6 +724,7 @@
 				5702EC122175C35700104820 /* QuartzViewController.m in Sources */,
 				57600AC021A534670034D4EB /* MultithreadingController.m in Sources */,
 				5702EC192175C35700104820 /* UIView+NTES.m in Sources */,
+				57DE5C8821AD708400D0E0B8 /* internetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
