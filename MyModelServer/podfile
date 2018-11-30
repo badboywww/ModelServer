@@ -7,5 +7,5 @@ pod 'Masonry'
 pod 'Reachability'
 pod 'CTAssetsPickerController'
 pod 'LBPhotoBrowser'
-
+pod 'SDWebImage'
 end

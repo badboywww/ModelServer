@@ -74,6 +74,9 @@
 		57DE5C8821AD708400D0E0B8 /* internetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C8721AD708400D0E0B8 /* internetController.m */; };
 		57DE5C8B21AD81C200D0E0B8 /* myXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C8A21AD81C200D0E0B8 /* myXMLParser.m */; };
 		57DE5C8F21AFC8B000D0E0B8 /* httpwebview.html in Resources */ = {isa = PBXBuildFile; fileRef = 57DE5C8E21AFC8B000D0E0B8 /* httpwebview.html */; };
+		57DE5C9321B01D7C00D0E0B8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C9221B01D7C00D0E0B8 /* MapViewController.m */; };
+		57DE5C9521B020A000D0E0B8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DE5C9421B020A000D0E0B8 /* CoreLocation.framework */; };
+		57E4916621B1304100083CE2 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E4916521B1304100083CE2 /* BaseViewController.m */; };
 		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +209,11 @@
 		57DE5C8921AD81C200D0E0B8 /* myXMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myXMLParser.h; sourceTree = "<group>"; };
 		57DE5C8A21AD81C200D0E0B8 /* myXMLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myXMLParser.m; sourceTree = "<group>"; };
 		57DE5C8E21AFC8B000D0E0B8 /* httpwebview.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = httpwebview.html; sourceTree = "<group>"; };
+		57DE5C9121B01D7C00D0E0B8 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		57DE5C9221B01D7C00D0E0B8 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		57DE5C9421B020A000D0E0B8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		57E4916421B1304100083CE2 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		57E4916521B1304100083CE2 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
 		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
 		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57DE5C9521B020A000D0E0B8 /* CoreLocation.framework in Frameworks */,
 				59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +262,7 @@
 		5702EBB92175BED100104820 /* MyModelServer */ = {
 			isa = PBXGroup;
 			children = (
+				57DE5C9021B01D6500D0E0B8 /* Map */,
 				5702EBEE2175C35700104820 /* Tools */,
 				57DE5C8521AD704000D0E0B8 /* Inter */,
 				57DE5C7E21AD153700D0E0B8 /* RunLoop */,
@@ -342,6 +352,8 @@
 				5702EBFB2175C35700104820 /* photos */,
 				57DE5C8921AD81C200D0E0B8 /* myXMLParser.h */,
 				57DE5C8A21AD81C200D0E0B8 /* myXMLParser.m */,
+				57E4916421B1304100083CE2 /* BaseViewController.h */,
+				57E4916521B1304100083CE2 /* BaseViewController.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -536,9 +548,19 @@
 			path = Inter;
 			sourceTree = "<group>";
 		};
+		57DE5C9021B01D6500D0E0B8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				57DE5C9121B01D7C00D0E0B8 /* MapViewController.h */,
+				57DE5C9221B01D7C00D0E0B8 /* MapViewController.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		D3315D2708C5C8DD4E07E360 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57DE5C9421B020A000D0E0B8 /* CoreLocation.framework */,
 				E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */,
 			);
 			name = Frameworks;
@@ -577,6 +599,11 @@
 				TargetAttributes = {
 					5702EBB62175BED100104820 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -668,6 +695,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5702EC1C2175C35700104820 /* PhotoSingle.m in Sources */,
+				57E4916621B1304100083CE2 /* BaseViewController.m in Sources */,
 				5793711821940F3C0001CEFD /* MusicalvibrationVc.m in Sources */,
 				57600B2421A7DEB00034D4EB /* MynsOperation.m in Sources */,
 				5702EC34217DF14200104820 /* CALayerViewController.m in Sources */,
@@ -699,6 +727,7 @@
 				5702EC102175C35700104820 /* UIKitDrawingViewController.m in Sources */,
 				57937120219423750001CEFD /* ReflectionCodeVc.m in Sources */,
 				5702EC2A2175C38D00104820 /* HRRequestTools.m in Sources */,
+				57DE5C9321B01D7C00D0E0B8 /* MapViewController.m in Sources */,
 				5702EC202175C35700104820 /* PhotoCollectionViewCell.m in Sources */,
 				5793712B21955B590001CEFD /* BageValue.m in Sources */,
 				57DE5C8421AD3F8F00D0E0B8 /* runLoopThread.m in Sources */,
@@ -873,6 +902,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MyModelServer/Other/mymodelserverpch.pch;
 				INFOPLIST_FILE = MyModelServer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -911,7 +941,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mr.GBLW.MyModelServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -926,6 +956,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MyModelServer/Other/mymodelserverpch.pch;
 				INFOPLIST_FILE = MyModelServer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -964,7 +995,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Mr.GBLW.MyModelServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

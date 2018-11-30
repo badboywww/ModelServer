@@ -62,6 +62,7 @@
                                             @"多图下载",
                                             @"RunLoop",
                                             @"网络编程",
+                                            @"地图",
                                             nil];
     [_dataArray addObjectsFromArray:arr];
     
@@ -156,6 +157,10 @@
     }else if(indexPath.row == 13){
         //网络编程
         internetController *vc = [[internetController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 14){
+        //地图
+        MapViewController *vc = [[MapViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     
