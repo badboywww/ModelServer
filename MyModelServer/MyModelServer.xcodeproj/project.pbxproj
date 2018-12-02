@@ -77,6 +77,9 @@
 		57DE5C9321B01D7C00D0E0B8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DE5C9221B01D7C00D0E0B8 /* MapViewController.m */; };
 		57DE5C9521B020A000D0E0B8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DE5C9421B020A000D0E0B8 /* CoreLocation.framework */; };
 		57E4916621B1304100083CE2 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E4916521B1304100083CE2 /* BaseViewController.m */; };
+		57E4916921B2817700083CE2 /* twoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E4916821B2817700083CE2 /* twoMapViewController.m */; };
+		57E4916C21B3B59D00083CE2 /* mapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E4916B21B3B59D00083CE2 /* mapLocation.m */; };
+		57E4916F21B3CBE200083CE2 /* MBProgressHUD+Progress.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E4916E21B3CBE200083CE2 /* MBProgressHUD+Progress.m */; };
 		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
@@ -214,6 +217,13 @@
 		57DE5C9421B020A000D0E0B8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		57E4916421B1304100083CE2 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		57E4916521B1304100083CE2 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		57E4916721B2817700083CE2 /* twoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = twoMapViewController.h; sourceTree = "<group>"; };
+		57E4916821B2817700083CE2 /* twoMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = twoMapViewController.m; sourceTree = "<group>"; };
+		57E4916A21B3B59D00083CE2 /* mapLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mapLocation.h; sourceTree = "<group>"; };
+		57E4916B21B3B59D00083CE2 /* mapLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mapLocation.m; sourceTree = "<group>"; };
+		57E4916D21B3CBE200083CE2 /* MBProgressHUD+Progress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Progress.h"; sourceTree = "<group>"; };
+		57E4916E21B3CBE200083CE2 /* MBProgressHUD+Progress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Progress.m"; sourceTree = "<group>"; };
+		57E4917021B3CC7A00083CE2 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
 		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
 		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -344,6 +354,9 @@
 		5702EBEE2175C35700104820 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				57E4917021B3CC7A00083CE2 /* Macro.h */,
+				57E4916D21B3CBE200083CE2 /* MBProgressHUD+Progress.h */,
+				57E4916E21B3CBE200083CE2 /* MBProgressHUD+Progress.m */,
 				57600B2121A7D3EE0034D4EB /* single.h */,
 				5702EBF32175C35700104820 /* HRRequestTools.h */,
 				5702EC272175C38C00104820 /* HRRequestTools.m */,
@@ -553,6 +566,10 @@
 			children = (
 				57DE5C9121B01D7C00D0E0B8 /* MapViewController.h */,
 				57DE5C9221B01D7C00D0E0B8 /* MapViewController.m */,
+				57E4916721B2817700083CE2 /* twoMapViewController.h */,
+				57E4916821B2817700083CE2 /* twoMapViewController.m */,
+				57E4916A21B3B59D00083CE2 /* mapLocation.h */,
+				57E4916B21B3B59D00083CE2 /* mapLocation.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -701,6 +718,7 @@
 				5702EC34217DF14200104820 /* CALayerViewController.m in Sources */,
 				5702EC152175C35700104820 /* MyImgeView.m in Sources */,
 				5702EBBF2175BED100104820 /* ViewController.m in Sources */,
+				57E4916F21B3CBE200083CE2 /* MBProgressHUD+Progress.m in Sources */,
 				57937107219134FC0001CEFD /* UIView+CALayer.m in Sources */,
 				57DE5C8121AD155A00D0E0B8 /* myRunLoopController.m in Sources */,
 				57DE5C8B21AD81C200D0E0B8 /* myXMLParser.m in Sources */,
@@ -711,7 +729,9 @@
 				5702EC0D2175C35700104820 /* DragandDropViewController.m in Sources */,
 				5702EC292175C38D00104820 /* Person.m in Sources */,
 				5702EBCA2175BED200104820 /* main.m in Sources */,
+				57E4916921B2817700083CE2 /* twoMapViewController.m in Sources */,
 				5793712F219575880001CEFD /* WeiboAnimationViewController.m in Sources */,
+				57E4916C21B3B59D00083CE2 /* mapLocation.m in Sources */,
 				5793710A2191663F0001CEFD /* WheelView.m in Sources */,
 				57600B1B21A7AA4B0034D4EB /* toolsModel.m in Sources */,
 				5702EC1D2175C35700104820 /* PhotoViewController.m in Sources */,

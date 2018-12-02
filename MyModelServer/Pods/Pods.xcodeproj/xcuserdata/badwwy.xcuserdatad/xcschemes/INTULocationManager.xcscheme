@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "66E36E2FF4627D5E6816A2DFD3BF8ED7"
-               BlueprintName = "Reachability"
+               BlueprintIdentifier = "EBB4BD1AA2A3AF8F70CB220137198394"
+               BlueprintName = "INTULocationManager"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libReachability.a">
+               BuildableName = "libINTULocationManager.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

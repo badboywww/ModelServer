@@ -26,6 +26,7 @@
 #import <LBPhotoBrowserView.h>
 #import <LBPhotoBrowserConst.h>
 #import <UIImageView+WebCache.h>
+#import <INTULocationManager/INTULocationManager.h>
 
 #pragma mark 自己的工具类
 #import "UIView+NTES.h"
@@ -36,6 +37,7 @@
 #import "UIColor+MyColor.h"
 #import "UIView+CALayer.h"
 #import "UIView+NTES.h"
+#import "MBProgressHUD+Progress.h"
 
 #import "single.h"
 

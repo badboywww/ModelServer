@@ -8,4 +8,5 @@ pod 'Reachability'
 pod 'CTAssetsPickerController'
 pod 'LBPhotoBrowser'
 pod 'SDWebImage'
+pod 'INTULocationManager'
 end

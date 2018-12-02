@@ -9,17 +9,36 @@
 #import "MapViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface MapViewController ()<CLLocationManagerDelegate>
+@interface MapViewController ()<CLLocationManagerDelegate,UIAlertViewDelegate,UITextViewDelegate,UITextFieldDelegate>
 {
     CLLocation *_lastLocation;
 }
 
 @property (nonatomic , strong) CLLocationManager *locationManager;
 
+//属性 地理编码
+@property (nonatomic, strong) CLGeocoder * geoC;
+
 //属性
 @property (nonatomic, strong) UIButton * button;
 //属性
 @property (nonatomic, strong) UIImageView * imageView;
+
+//属性
+@property (nonatomic, strong) UITextView * textview;
+
+//属性 纬度
+@property (nonatomic, strong) UITextField * latitudetextField;
+
+//属性 经度
+@property (nonatomic, strong) UITextField * longitudeTextField;
+
+//属性
+@property (nonatomic, strong) UIButton * GeoBtn;
+
+//属性
+@property (nonatomic, strong) UIButton * AntigeoBtn;
+
 
 
 
@@ -34,6 +53,18 @@
     [self setNav];
     
     [self setUI];
+    
+    //地理编码和反地理编码 [self Geocoding];
+   
+}
+
+
+- (CLGeocoder *)geoC {
+    
+    if (_geoC == nil) {
+        _geoC = [[CLGeocoder alloc]init];
+    }
+    return _geoC;
 }
 
 - (CLLocationManager *)locationManager {
@@ -104,16 +135,22 @@
     _button = button;
     [self.view addSubview:button];
     
-    [self.view addSubview:self.imageView];
+//    [self.view addSubview:self.imageView];
     
 }
 
 - (void)btnClick {
     
-   //定位 [self Positioning];
+   //定位    [self Positioning];
     
-    //指南针
-    [self compass];
+  //指南针   [self compass];
+    
+  //区域监听  [self areaMonitoring];
+    
+  //第三方框架 [self threeclass];
+    
+    //代理转block
+    [self mapMode];
 
 }
 
@@ -210,6 +247,213 @@
     
 }
 
+/* 区域监听 */
+- (void)areaMonitoring {
+    
+    //判断当前区域是否可以被监听
+    if (![CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
+        return ;
+    }
+    
+    
+    if ([CLLocationManager locationServicesEnabled]) {
+        //0.创建区域中心和区域半径
+        
+        CLLocationCoordinate2D center;
+        
+        center.latitude = 20.2113;
+        center.longitude = 120.360;
+        
+        CLLocationDirection distance = 1000.0;
+        
+        if(distance > self.locationManager.maximumRegionMonitoringDistance)
+        {
+            distance = self.locationManager.maximumRegionMonitoringDistance;
+        }
+        
+        //1.创建区域
+        /*
+         
+         第一个参数:区域中心
+         第二个参数:区域半径
+         第三个参数:
+         
+         */
+        
+        CLCircularRegion *region = [[CLCircularRegion alloc]initWithCenter:center radius:distance identifier:@"XX"];
+        
+        //2.监听区域 只有移动才能被监听 [self.locationManager startMonitoringForRegion:region];
+        
+        //请求某个区域状态，不止可以获取指定区域状态，当状态发生变化也能调用对应代理方法
+        [self.locationManager requestStateForRegion:region];
+        
+        
+    }else{
+        [[[UIAlertView alloc] initWithTitle:@"当前无定位功能" message:@"开启定位" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
+    
+    }
+    
+    
+    
+    
+}
+
+/*地理编码和反地理编码*/
+- (void)Geocoding {
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *text = [[UILabel alloc]initWithFrame:CGRectMake(Swidth/2 - 40, 70, 100, 30)];
+    text.text = @"详细地址";
+    text.font = [UIFont systemFontOfSize:18];
+    [self.view addSubview:text];
+    
+    self.textview = [[UITextView alloc]initWithFrame:CGRectMake(Swidth/2 - 150, CGRectGetMaxY(text.frame)+10, 300, 185.4)];
+    
+    self.textview.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
+    self.textview.delegate = self;
+    
+    [self.view addSubview:self.textview];
+    
+    //经度
+    self.longitudeTextField = [[UITextField alloc]initWithFrame:CGRectMake(CGRectGetMinX(text.frame)-25, CGRectGetMaxY(self.textview.frame)+20, 150, 30)];
+    self.longitudeTextField.placeholder = @"经度";
+    self.longitudeTextField.delegate = self;
+    self.longitudeTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.longitudeTextField];
+    
+    //纬度
+    self.latitudetextField = [[UITextField alloc]initWithFrame:CGRectMake(CGRectGetMinX(text.frame)-25, CGRectGetMaxY(self.longitudeTextField.frame)+20, 150, 30)];
+    self.latitudetextField.placeholder = @"纬度";
+    self.latitudetextField.delegate = self;
+    self.latitudetextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:self.latitudetextField];
+    
+    
+    self.GeoBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.GeoBtn setTitle:@"地理编码" forState:UIControlStateNormal];
+    self.GeoBtn.frame = CGRectMake(CGRectGetMinX(self.textview.frame), CGRectGetMaxY(self.latitudetextField.frame)+20, 100, 30);
+    [self.GeoBtn addTarget:self action:@selector(GeoBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.GeoBtn];
+    
+    self.AntigeoBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.AntigeoBtn setTitle:@"反地理编码" forState:UIControlStateNormal];
+    self.AntigeoBtn.frame = CGRectMake(CGRectGetMaxX(self.GeoBtn.frame)+100, CGRectGetMaxY(self.latitudetextField.frame)+20, 100, 30);
+    [self.AntigeoBtn addTarget:self action:@selector(AntigeoBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.AntigeoBtn];
+    
+    
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    
+    [self.view endEditing:YES];
+    
+}
+
+//地理编码
+- (void)GeoBtnAction {
+    
+    NSString *address = self.textview.text;
+    
+    if ([address length] == 0) {
+        return ;
+    }
+    
+    
+    [self.geoC geocodeAddressString:address completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        /*
+         
+         CLPlacemark 地标对象
+         location    对应的位置对象
+         name        地址全称
+         loacality
+         按照相关性进行排序
+         */
+        
+        CLPlacemark *pl = [placemarks firstObject];
+        
+        if (error == nil) {
+            
+            NSLog(@"纬度:%f---经度:%f",pl.location.coordinate.latitude,pl.location.coordinate.longitude);
+            
+            NSLog(@"%@",pl.name);
+            
+            self.latitudetextField.text = @(pl.location.coordinate.latitude).stringValue;
+            self.longitudeTextField.text = @(pl.location.coordinate.longitude).stringValue;
+            
+        }
+        
+        
+    }];
+    
+}
+
+//反地理编码
+- (void)AntigeoBtnAction {
+    
+    
+    double latitude = [self.latitudetextField.text doubleValue];
+    double longitude = [self.longitudeTextField.text doubleValue];
+    
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+    
+    
+    [self.geoC reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        
+        CLPlacemark *pl = [placemarks firstObject];
+        
+        if (error == nil) {
+            
+            NSLog(@"纬度:%f---经度:%f",pl.location.coordinate.latitude,pl.location.coordinate.longitude);
+            
+            NSLog(@"%@",pl.name);
+            
+            self.textview.text = pl.name;
+            self.latitudetextField.text = @(pl.location.coordinate.latitude).stringValue;
+            self.longitudeTextField.text = @(pl.location.coordinate.longitude).stringValue;
+            
+            
+        }
+        
+        
+        
+    }];
+    
+}
+
+
+/* 第三方框架 */
+- (void)threeclass
+{
+    twoMapViewController *vc = [[twoMapViewController alloc]init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+/* 代理转block */
+- (void)mapMode
+{
+    [[mapLocation sharemapLocation]getCurrentLocation:^(CLLocation * _Nullable location, CLPlacemark * _Nullable pleaceMark, NSString * _Nullable errorMsg) {
+        
+        if (errorMsg.length > 0) {
+            [MBProgressHUD showToastAndMessage:errorMsg places:0 toView:nil];
+            
+            return;
+        }
+        
+                NSLog(@"%@--%@",pleaceMark.name,location);
+        
+        
+    }StopLocation:NO];
+}
+
+
 #pragma mark 关于 CLLocationManagerDelegate
 
 //当用户取到位置信息时，调用
@@ -220,7 +464,8 @@
 */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     
-    //定位的基本信息 [self setpositionAction:locations];
+    //定位的基本信息
+    [self setpositionAction:locations];
     
     
 }
@@ -261,6 +506,52 @@
     }];
 }
 
+//用户监听区域时调用 进入区域
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
+    
+     NSLog(@"进入区域--%@",region.identifier);
+}
+//用户监听区域时调用 离开区域
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
+    
+    NSLog(@"离开区域--%@",region.identifier);
+}
+
+/**
+ *  请求某个区域的状态是调用
+ *
+ *  @param manager 位置管理者
+ *  @param state   状态
+ *  @param region  区域
+ */
+-(void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
+{
+    //    CLRegionStateUnknown,   未知状态
+    //    CLRegionStateInside, // 在区域内部
+    //    CLRegionStateOutside // 区域外面
+    if(state == CLRegionStateInside)
+    {
+        NSLog(@"在区域内部");
+    }else if (state == CLRegionStateOutside)
+    {
+        NSLog(@"在区域外部");
+    }else if(state == CLRegionStateUnknown){
+        NSLog(@"未知状态");
+    }
+}
+
+/**
+ *  监听区域失败时调用
+ *
+ *  @param manager 位置管理者
+ *  @param region  区域
+ *  @param error   错误
+ */
+-(void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error
+{
+    // 经验: 一般在这里, 做移除最远的区域
+    //    [manager stopMonitoringForRegion:最远区域]
+}
 
 /* 定位授权状态 */
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {

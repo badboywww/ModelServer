@@ -84,6 +84,7 @@
 
 
 //加载的Cell
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL];
@@ -102,6 +103,8 @@
 
 
 //点击Cell
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (indexPath.row == 0) {
@@ -163,6 +166,11 @@
         MapViewController *vc = [[MapViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
+    
+    
+  
+ 
+    
     
 }
 
