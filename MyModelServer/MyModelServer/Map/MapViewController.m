@@ -149,8 +149,10 @@
     
   //第三方框架 [self threeclass];
     
-    //代理转block
-    [self mapMode];
+  //代理转block [self mapMode];
+    
+    //地图
+    [self threeMap];
 
 }
 
@@ -439,6 +441,7 @@
 /* 代理转block */
 - (void)mapMode
 {
+    
     [[mapLocation sharemapLocation]getCurrentLocation:^(CLLocation * _Nullable location, CLPlacemark * _Nullable pleaceMark, NSString * _Nullable errorMsg) {
         
         if (errorMsg.length > 0) {
@@ -450,9 +453,16 @@
                 NSLog(@"%@--%@",pleaceMark.name,location);
         
         
-    }StopLocation:NO];
+    }StopLocation:YES];
 }
 
+- (void)threeMap {
+    
+    threeMapViewController *vc = [[threeMapViewController alloc]init];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 #pragma mark 关于 CLLocationManagerDelegate
 

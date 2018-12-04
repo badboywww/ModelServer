@@ -8,5 +8,6 @@ pod 'Reachability'
 pod 'CTAssetsPickerController'
 pod 'LBPhotoBrowser'
 pod 'SDWebImage'
+#定位
 pod 'INTULocationManager'
 end

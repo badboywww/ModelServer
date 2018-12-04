@@ -21,7 +21,7 @@ singleH(mapLocation);
 
 
 /**
- 用户获取当前定位信息
+ 用户获取当前定位信息 YES:是  NO:否
 
  @param block  物理定位信息
  @param stop 是否单次定位 YES:是  NO:否

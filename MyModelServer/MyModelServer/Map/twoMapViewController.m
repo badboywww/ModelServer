@@ -22,7 +22,8 @@
     
     self.title = @"第三方框架";
   
-    [self setHiddenBtn:YES andbuttonTitle:@"定位" Action:@selector(buttonClick)];
+    [self setHiddenBtn:YES withbtnFrame:CGRectMake(100, 80, 100, 60) andbuttonTitle:@"定位" Action:@selector(buttonClick)];
+    
     
 }
 
@@ -44,6 +45,15 @@
                                                  
                                              }
                                          }];
+}
+
+
+- (void)test {
+    
+    
+    
+    
+    
 }
 
 

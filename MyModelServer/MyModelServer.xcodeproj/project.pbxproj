@@ -80,6 +80,8 @@
 		57E4916921B2817700083CE2 /* twoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E4916821B2817700083CE2 /* twoMapViewController.m */; };
 		57E4916C21B3B59D00083CE2 /* mapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E4916B21B3B59D00083CE2 /* mapLocation.m */; };
 		57E4916F21B3CBE200083CE2 /* MBProgressHUD+Progress.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E4916E21B3CBE200083CE2 /* MBProgressHUD+Progress.m */; };
+		57E4917C21B50A4D00083CE2 /* threeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E4917A21B50A4D00083CE2 /* threeMapViewController.m */; };
+		57E4917D21B50A4D00083CE2 /* threeMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E4917B21B50A4D00083CE2 /* threeMapViewController.xib */; };
 		59978FB637ACB46BFB1D9AD7 /* libPods-MyModelServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +226,9 @@
 		57E4916D21B3CBE200083CE2 /* MBProgressHUD+Progress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Progress.h"; sourceTree = "<group>"; };
 		57E4916E21B3CBE200083CE2 /* MBProgressHUD+Progress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Progress.m"; sourceTree = "<group>"; };
 		57E4917021B3CC7A00083CE2 /* Macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		57E4917921B50A4D00083CE2 /* threeMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = threeMapViewController.h; sourceTree = "<group>"; };
+		57E4917A21B50A4D00083CE2 /* threeMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = threeMapViewController.m; sourceTree = "<group>"; };
+		57E4917B21B50A4D00083CE2 /* threeMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = threeMapViewController.xib; sourceTree = "<group>"; };
 		78128E7266089A9BBB7595F1 /* Pods-MyModelServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.debug.xcconfig"; sourceTree = "<group>"; };
 		E094C4797CEA4C29F476A317 /* Pods-MyModelServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyModelServer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyModelServer/Pods-MyModelServer.release.xcconfig"; sourceTree = "<group>"; };
 		E5C0A991D553B3440DA958AA /* libPods-MyModelServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyModelServer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -354,10 +359,10 @@
 		5702EBEE2175C35700104820 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				57600B2121A7D3EE0034D4EB /* single.h */,
 				57E4917021B3CC7A00083CE2 /* Macro.h */,
 				57E4916D21B3CBE200083CE2 /* MBProgressHUD+Progress.h */,
 				57E4916E21B3CBE200083CE2 /* MBProgressHUD+Progress.m */,
-				57600B2121A7D3EE0034D4EB /* single.h */,
 				5702EBF32175C35700104820 /* HRRequestTools.h */,
 				5702EC272175C38C00104820 /* HRRequestTools.m */,
 				5702EBF02175C35700104820 /* SPUncaughtExceptionHandler */,
@@ -570,6 +575,9 @@
 				57E4916821B2817700083CE2 /* twoMapViewController.m */,
 				57E4916A21B3B59D00083CE2 /* mapLocation.h */,
 				57E4916B21B3B59D00083CE2 /* mapLocation.m */,
+				57E4917921B50A4D00083CE2 /* threeMapViewController.h */,
+				57E4917A21B50A4D00083CE2 /* threeMapViewController.m */,
+				57E4917B21B50A4D00083CE2 /* threeMapViewController.xib */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -655,6 +663,7 @@
 				57937139219579FB0001CEFD /* ComposeVC.xib in Resources */,
 				57DE5C8F21AFC8B000D0E0B8 /* httpwebview.html in Resources */,
 				5702EBC22175BED100104820 /* Main.storyboard in Resources */,
+				57E4917D21B50A4D00083CE2 /* threeMapViewController.xib in Resources */,
 				57937128219559F70001CEFD /* QQButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -751,6 +760,7 @@
 				5702EC202175C35700104820 /* PhotoCollectionViewCell.m in Sources */,
 				5793712B21955B590001CEFD /* BageValue.m in Sources */,
 				57DE5C8421AD3F8F00D0E0B8 /* runLoopThread.m in Sources */,
+				57E4917C21B50A4D00083CE2 /* threeMapViewController.m in Sources */,
 				5702EC2F2178B41C00104820 /* UIView+HRFrame.m in Sources */,
 				57DE5C7421AA8A8300D0E0B8 /* multiImageController.m in Sources */,
 				5702EC212175C35700104820 /* GetPhotoViewController.m in Sources */,
